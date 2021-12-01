@@ -64,12 +64,12 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/VegetaRobot
-RUN git clone -b shiken https://github.com/Ctzfamily/VegetaRobot /root/VegetaRobot
-WORKDIR /root/VegetaRobot
+# Copy Python Requirements to /root/UpinRobot
+RUN git clone -b shiken https://github.com/Soedirmand/UpinRobot /root/UpinRobot
+WORKDIR /root/UpinRobot
 
-#Copy config file to /root/VegetaRobot/VegetaRobot
-COPY ./VegetaRobot/sample_config.py ./VegetaRobot/config.py* /root/VegetaRobot/VegetaRobot/
+#Copy config file to /root/UpinRobot/UpinRobot
+COPY ./UpinRobot/sample_config.py ./UpinRobot/config.py* /root/UpinRobot/UpinRobot/
 
 ENV PATH="/home/bot/bin:$PATH"
 
@@ -77,4 +77,4 @@ ENV PATH="/home/bot/bin:$PATH"
 RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
-CMD ["python3","-m","VegetaRobot"]
+CMD ["python3","-m","UpinRobot"]
