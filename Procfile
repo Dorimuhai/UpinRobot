@@ -1,3 +1,3 @@
-worker: python3 -m VegetaRobot
-web: python3 -m VegetaRobot
+worker: python3 -m UpinRobot
+web: python3 -m UpinRobot
 ps:scale worker=1
