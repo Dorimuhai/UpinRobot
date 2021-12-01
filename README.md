@@ -18,10 +18,10 @@
 > If You're Going To Fork This Repo Then Don't Forget To Hit a Star ✯
 ## Available on Telegram as [IpinRobot](https://t.me/IpintpiRobot)
 
-## ✨ Easy To Deploy ✨
+## 📡 Eazy To Deploy 
 The easiest way to deploy this Bot
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Ctzfamily/VegetaRobot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-Blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Ctzfamily/VegetaRobot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-light blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
 ## Devloper
 
