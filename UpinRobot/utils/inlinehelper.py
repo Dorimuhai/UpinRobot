@@ -19,9 +19,9 @@ from pyrogram.types import (
 )
 from search_engine_parser import GoogleSearch
 
-from VegetaRobot import OWNER_ID, pgram, arq
-from VegetaRobot.utils.pluginhelpers import convert_seconds_to_minutes as time_convert
-from VegetaRobot.utils.pluginhelpers import fetch
+from UpinRobot import OWNER_ID, pgram, arq
+from UpinRobot.utils.pluginhelpers import convert_seconds_to_minutes as time_convert
+from UpinRobot.utils.pluginhelpers import fetch
 
 SUDOERS = OWNER_ID
 app = pgram
@@ -48,7 +48,7 @@ async def paste(content):
 async def inline_help_func(__HELP__):
     buttons = InlineKeyboard(row_width=2)
     buttons.add(
-        InlineKeyboardButton("🔐 More Help.", url=f"t.me/VegetaRobot?start=help"),
+        InlineKeyboardButton("🔐 More Help.", url=f"t.me/IpintpiRobot?start=help"),
         InlineKeyboardButton("🔄 Go Inline", switch_inline_query_current_chat=""),
     )
     answerss = [
@@ -56,7 +56,7 @@ async def inline_help_func(__HELP__):
             title="Inline Commands",
             description="Help Related To Inline Usage.",
             input_message_content=InputTextMessageContent(__HELP__),
-            thumb_url="https://telegra.ph/file/6d5d79218c5a49b6238e9.jpg",
+            thumb_url="https://telegra.ph/file/10139851d5bf597ce8c25.jpg",
             reply_markup=buttons,
         )
     ]
@@ -70,23 +70,23 @@ async def alive_function(answers):
     bot_state = "Dead" if not await app.get_me() else "Alive"
     # ubot_state = 'Dead' if not await app2.get_me() else 'Alive'
     buttons.add(
-        InlineKeyboardButton("🔐 Main Bot", url="https://t.me/VegetaRobot?start=help"),
+        InlineKeyboardButton("🔐 Main Bot", url="https://t.me/IpintpiRobot?start=help"),
         InlineKeyboardButton("🔄 Go Inline", switch_inline_query_current_chat=""),
     )
 
     msg = f"""
-**[Vegeta⚡](https://github.com/Ctzfamily/VegetaRobot):**
+**[Upin✨](https://github.com/Soedirmand/UpinRobot):**
 **MainBot:** `{bot_state}`
 **Python:** `3.9`
 **Pyrogram:** `{pyrover}`
 **Platform:** `{sys.platform}`
-**Profiles:** [BOT](t.me/VegetaRobot) | [REPO](https://github.com/Ctzfamily/VegetaRobot)
+**Profiles:** [BOT](t.me/IpintpiRobot) | [REPO](https://github.com/Soedirmand/UpinRobot)
 """
     answers.append(
         InlineQueryResultArticle(
             title="Alive",
             description="Check Bot's Stats",
-            thumb_url="https://telegra.ph/file/6d5d79218c5a49b6238e9.jpg",
+            thumb_url="https://telegra.ph/file/10139851d5bf597ce8c25.jpg",
             input_message_content=InputTextMessageContent(
                 msg, disable_web_page_preview=True
             ),
@@ -454,4 +454,4 @@ async def pokedexinfo(answers, pokemon):
     )
     return answers
 
-#Zeus
+#zeus
