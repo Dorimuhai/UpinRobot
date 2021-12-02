@@ -2,8 +2,8 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText, Boolean, Integer, distinct, func
 
-from VegetaRobot.modules.helper_funcs.msg_types import Types
-from VegetaRobot.modules.sql import BASE, SESSION
+from UpinRobot.modules.helper_funcs.msg_types import Types
+from UpinRobot.modules.sql import BASE, SESSION
 
 
 class CustomFilters(BASE):
