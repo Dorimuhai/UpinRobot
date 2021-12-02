@@ -2,8 +2,8 @@ import random
 import threading
 from typing import Union
 
-from VegetaRobot.modules.helper_funcs.msg_types import Types
-from VegetaRobot.modules.sql import BASE, SESSION
+from UpinRobot.modules.helper_funcs.msg_types import Types
+from UpinRobot.modules.sql import BASE, SESSION
 from sqlalchemy import (BigInteger, Boolean, Column, Integer, String,
                         UnicodeText)
 
