@@ -1,7 +1,7 @@
 from math import ceil
 from typing import Dict, List
 
-from VegetaRobot import NO_LOAD
+from UpinRobot import NO_LOAD
 from telegram import MAX_MESSAGE_LENGTH, Bot, InlineKeyboardButton, ParseMode
 from telegram.error import TelegramError
 
@@ -67,11 +67,11 @@ def paginate_modules(page_n: int, module_dict: Dict, prefix, chat=None) -> List:
     if len(pairs) > 100:
         pairs = pairs[modulo_page * 100:100 * (modulo_page + 1)] + [
             (EqInlineKeyboardButton("⬅️", callback_data="{}_prev({})".format(prefix, modulo_page)),
-                EqInlineKeyboardButton("Back to Home", callback_data="vegeta_back"),
+                EqInlineKeyboardButton("Back to Home", callback_data="upin_back"),
              EqInlineKeyboardButton("➡️", callback_data="{}_next({})".format(prefix, modulo_page)))]
 
     else:
-        pairs += [[EqInlineKeyboardButton("⬅ Back to Home ➡", callback_data="vegeta_back")]]
+        pairs += [[EqInlineKeyboardButton("⬅ Back to Home ➡", callback_data="upin_back")]]
 
     return pairs
 
