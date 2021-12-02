@@ -1,6 +1,6 @@
 import threading
 
-from UpinRobot.modules.sql import BASE, SESSION
+from KURUMIBOT.modules.sql import BASE, SESSION
 from sqlalchemy import Column, Integer, UnicodeText
 
 
