@@ -6,7 +6,7 @@ import re
 from sys import argv
 from typing import Optional
 
-from VegetaRobot import (
+from UpinRobot import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -24,10 +24,10 @@ from VegetaRobot import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from VegetaRobot.modules import ALL_MODULES
-from VegetaRobot.modules.helper_funcs.chat_status import is_user_admin
-from VegetaRobot.modules.helper_funcs.misc import paginate_modules
-from VegetaRobot.modules.disable import DisableAbleCommandHandler
+from UpinRobot.modules import ALL_MODULES
+from UpinRobot.modules.helper_funcs.chat_status import is_user_admin
+from UpinRobot.modules.helper_funcs.misc import paginate_modules
+from UpinRobot.modules.disable import DisableAbleCommandHandler
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -79,63 +79,53 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
- ──『[SAIYAN VEGETA](https://telegra.ph/file/561fa547f3c4940c95ddf.jpg)』
+ ──『[ᴜ&ɪ](https://telegra.ph/file/10139851d5bf597ce8c25.jpg)』
 
-Hey User!!✋
-𝐈 Am *Prince Vegeta* Add 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩 𝐈 𝐖𝐢𝐥𝐥 𝐃𝐞𝐬𝐭𝐫𝐨𝐲 𝐄𝐯𝐢𝐥𝐬 𝐖𝐢𝐭𝐡 𝐌𝐲 Powers...\n
-*JOIN OFFICIAL* -
-[CHANNEL](t.me/pegasusUpdates) - [SUPPORT](t.me/pegasusSupportChat)\n
+*ʜɪ ᴛʜᴇʀᴇ*!!
+──────────────────────
+*ᴜᴘɪɴ ɪᴘɪɴ* ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ!
+──────────────────────
+*ᴊᴏɪɴ ᴏꜰꜰɪᴄɪᴀʟ* -
+[ᴍᴀɪɴᴛᴀɪɴᴇᴅ](t.me/Rimbahuns) - [ᴄʟɪᴄᴋ](t.me/allbefin)\n
 ──『*ᴛʜᴀɴᴋs  ғᴏʀ  ᴜsɪɴɢ*』
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-                            text="☑ Add Vegeta to Group ☑",
-                            url="t.me/VegetaRobot?startgroup=true"),
+                            text="☆ ᴀᴅᴅ ɪᴘɪɴ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ☆",
+                            url="t.me/IpintpiRobot?startgroup=true"),
                     ],
                    [
-                       InlineKeyboardButton(text="✧ Network", url="t.me/pegasusXteam"),
-                       InlineKeyboardButton(text="✧ Logs", url="t.me/pegasusLogs"),
+                       InlineKeyboardButton(text="☆ ɴᴇᴛᴡᴏʀᴋ", url="t.me/IpinXteam"),
+                       InlineKeyboardButton(text="☆ ʟᴏɢꜱ", url="t.me/joinlogsk"),
                      ],
                     [                  
                        InlineKeyboardButton(
-                             text="✧ Support",
+                             text="☆ ꜱᴜᴘᴘᴏʀᴛ",
                              url=f"https://t.me/{SUPPORT_CHAT}"),
                        InlineKeyboardButton(
-                             text="✧ Updates",
+                             text="☆ ᴄʜᴀɴɴᴇʟ ☆",
                              url=f"https://t.me/{UPDATES_CHANNEL}"),
                         ],
                        [
-                           InlineKeyboardButton(text="✧ MY POWERS ✧", callback_data="help_back"
+                           InlineKeyboardButton(text="☆ ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅ ☆", callback_data="help_back"
          ),
     ],
 ] 
 
 HELP_STRINGS = """
-Hey there, I'm *Vegeta*!
-To make me functional, make sure that i have enough rights in your group.
-Helpful commands:
-- /start: Starts me! You've probably already used this.
-- /help: Sends this message; I'll tell you more about myself!
-- /donate: Gives you info on how to support me and my creator.
-If you want to report bugs or have any questions on how to use me then feel free to reach out: *@VegetaSupport.*
-All commands can be used with the following: *(/),(!),(?),(.),(~)*
-List of all the Modules:
-""".format(
-    dispatcher.bot.first_name,
-    "" if not ALLOW_EXCL else "📝All commands can either be used with / or !.",
-)
+Click on the button bellow to get description about specifics command."""
 
 HELP_MSG = "Click the button below to get help manu in your pm."
-DONATE_STRING = """Contact to **@PegasusXrobot**"""
+DONATE_STRING = """Contact to **@allbefin**"""
 HELP_IMG= "https://telegra.ph/file/9d2c6e3b28afe7619856e.jpg"
-GROUPSTART_IMG= "https://telegra.ph/file/1cbafa58dda18528f9e0c.mp4"
+GROUPSTART_IMG= "https://telegra.ph/file/15517691e12cf2505261c.mp4"
 
-STICKERS = ( "CAACAgUAAx0CXss_8QABAjzEYaXnOPwfLA22Dea6kU6EvrELQWgAAmoEAAIYaChVcBl8nrGetAIiBA",
-           "CAACAgUAAx0CXss_8QABAjzFYaXnObthrCpGkPRRNr471UrxAxsAAgEEAAKqVjBVdLdGaDAs3noiBA",
-           "CAACAgUAAx0CXss_8QABAjzGYaXnOosVqi4RBeMSLVvty53Q_UgAAhMEAAJqlClV9scsuWjjA60iBA",
-           "CAACAgUAAx0CXss_8QABAjzHYaXnOlfNEo15FunXUy0O9RuSc_AAAs4EAALPrzFV_rrVm8aMDyYiBA", )
+STICKERS = ( "CAACAgUAAxkBAAEEl-ZhphuQxfziE6Ihh67EiSxBYbLNXgACUQADywzcOs2n2Pzc_EOFIgQ",
+           "CAACAgUAAxkBAAEEl-ZhphuQxfziE6Ihh67EiSxBYbLNXgACUQADywzcOs2n2Pzc_EOFIgQ",
+           "CAACAgUAAxkBAAEEl-ZhphuQxfziE6Ihh67EiSxBYbLNXgACUQADywzcOs2n2Pzc_EOFIgQ",
+           "CAACAgUAAxkBAAEEl-ZhphuQxfziE6Ihh67EiSxBYbLNXgACUQADywzcOs2n2Pzc_EOFIgQ", )
            
 
 IMPORTED = {}
@@ -149,7 +139,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("VegetaRobot.modules." + module_name)
+    imported_module = importlib.import_module("UpinRobot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -250,7 +240,7 @@ def start(update: Update, context: CallbackContext):
     else:
         first_name = update.effective_user.first_name
         update.effective_message.reply_video(
-            GROUPSTART_IMG, caption= "*hey {},*\n*Super Saiyan here*\n*Power lavel time* : {} ".format(
+            GROUPSTART_IMG, caption= "*Hay {},*\n*Upin Robot here*\n*Power lavel time* : {} ".format(
              first_name,uptime
             ),
             parse_mode=ParseMode.MARKDOWN,
@@ -258,7 +248,7 @@ def start(update: Update, context: CallbackContext):
                 [
                   [
                   InlineKeyboardButton(text="✧ Support ", url=f"https://telegram.dog/{SUPPORT_CHAT}"),
-                  InlineKeyboardButton(text="✧ Updates ", url=f"t.me/VegetaUpdates"),
+                  InlineKeyboardButton(text="✧ Updates ", url=f"t.me/UpinIpinUpdates"),
                   ]
                 ]
             ),
@@ -348,7 +338,7 @@ def help_button(update, context):
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton(text="⬅ Back", callback_data="help_back"),
-                      InlineKeyboardButton(text="⬅ Home", callback_data="vegeta_back")]]
+                      InlineKeyboardButton(text="⬅ Home", callback_data="upin_back")]]
                 ),
             )
 
@@ -390,9 +380,9 @@ def help_button(update, context):
 
 
 
-def vegeta_data_callback(update, context):
+def upin_data_callback(update, context):
     query = update.callback_query
-    if query.data == "vegeta_":
+    if query.data == "upin_":
         query.message.edit_text(
             text="""CallBackQueriesData Here""",
             parse_mode=ParseMode.MARKDOWN,
@@ -400,12 +390,12 @@ def vegeta_data_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Back", callback_data="vegeta_back")
+                    InlineKeyboardButton(text="Back", callback_data="upin_back")
                  ]
                 ]
             ),
         )
-    elif query.data == "vegeta_back":
+    elif query.data == "upin_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -643,7 +633,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 1610284626 and DONATION_LINK:
+        if OWNER_ID != 2140792236 and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
                 "[here]({})".format(DONATION_LINK),
@@ -693,7 +683,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}","[SUPER SAIYAN VEGETA IS BACK](https://telegra.ph/file/d3db0babad0d1729c5f59.jpg)", parse_mode=ParseMode.MARKDOWN) 
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}","[UPIN IPIN IS BACK](https://telegra.ph/file/10139851d5bf597ce8c25.jpg)", parse_mode=ParseMode.MARKDOWN) 
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!",
@@ -710,7 +700,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    data_callback_handler = CallbackQueryHandler(vegeta_data_callback, pattern=r"vegeta_")
+    data_callback_handler = CallbackQueryHandler(upin_data_callback, pattern=r"upin_")
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
 
