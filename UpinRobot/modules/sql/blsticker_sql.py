@@ -1,6 +1,6 @@
 import threading
 
-from VegetaRobot.modules.sql import BASE, SESSION
+from UpinRobot.modules.sql import BASE, SESSION
 from sqlalchemy import Column, Integer, String, UnicodeText, distinct, func
 
 
