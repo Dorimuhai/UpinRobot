@@ -1,7 +1,7 @@
 import threading
 
-from VegetaRobot import dispatcher
-from VegetaRobot.modules.sql import BASE, SESSION
+from UpinRobot import dispatcher
+from UpinRobot.modules.sql import BASE, SESSION
 from sqlalchemy import (Column, ForeignKey, Integer, String, UnicodeText,
                         UniqueConstraint, func)
 
