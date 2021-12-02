@@ -114,7 +114,7 @@ if ENV:
             "Your blacklisted chats list does not contain valid integers.")
 
 else:
-    from VegetaRobot.config import Development as Config
+    from UpinRobot.config import Development as Config
     TOKEN = Config.TOKEN
 
     try:
@@ -196,7 +196,7 @@ else:
     sw = spamwatch.Client(SPAMWATCH_API)
     
 #install aiohttp session
-print("[VegetaRobot]: Initializing AIOHTTP Session")
+print("[UpinRobot]: Initializing AIOHTTP Session")
 aiohttpsession = ClientSession() 
 arq = ARQ("https://thearq.tech", "YIECCC-NAJARO-OLLREW-SJSRIP-ARQ", aiohttpsession)
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
@@ -211,7 +211,7 @@ DEMONS = list(DEMONS)
 TIGERS = list(TIGERS)
 
 # Load at end to ensure all prev variables have been set
-from VegetaRobot.modules.helper_funcs.handlers import (CustomCommandHandler,
+from UpinRobot.modules.helper_funcs.handlers import (CustomCommandHandler,
                                                         CustomMessageHandler,
                                                         CustomRegexHandler)
 
