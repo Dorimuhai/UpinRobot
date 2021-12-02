@@ -1,7 +1,7 @@
 from typing import List, Optional
 
-from VegetaRobot import LOGGER
-from VegetaRobot.modules.users import get_user_id
+from UpinRobot import LOGGER
+from UpinRobot.modules.users import get_user_id
 from telegram import Message, MessageEntity
 from telegram.error import BadRequest
 
