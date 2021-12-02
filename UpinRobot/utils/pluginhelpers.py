@@ -13,9 +13,9 @@ from pyrogram import Client
 from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Chat, Message, User
 
-from VegetaRobot import OWNER_ID, SUPPORT_CHAT
-from VegetaRobot.utils.errors import split_limits
-from VegetaRobot import pgram
+from UpinRobot import OWNER_ID, SUPPORT_CHAT
+from UpinRobot.utils.errors import split_limits
+from UpinRobot import pgram
 
 
 def get_user(message: Message, text: str) -> [int, str, None]:
