@@ -1,5 +1,5 @@
 """
-(Copyright to @ZeusXRobot
+(Copyright to @VegetaRobot
 Powered by @pegasusXteam
 """
 import html
@@ -9,9 +9,9 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
 
-from VegetaRobot import DRAGONS, dispatcher
-from VegetaRobot.modules.disable import DisableAbleCommandHandler
-from VegetaRobot.modules.helper_funcs.chat_status import (bot_admin, can_pin,
+from UpinRobot import DRAGONS, dispatcher
+from UpinRobot.modules.disable import DisableAbleCommandHandler
+from UpinRobot.modules.helper_funcs.chat_status import (bot_admin, can_pin,
                                                            can_promote,
                                                           user_can_changeinfo,
                                                            connection_status,
@@ -19,10 +19,10 @@ from VegetaRobot.modules.helper_funcs.chat_status import (bot_admin, can_pin,
                                                            ADMIN_CACHE, )
 
 
-from VegetaRobot.modules.helper_funcs.extraction import (extract_user,
+from UpinRobot.modules.helper_funcs.extraction import (extract_user,
                                                         extract_user_and_text)
-from VegetaRobot.modules.log_channel import loggable
-from VegetaRobot.modules.helper_funcs.alternate import send_message
+from UpinRobot.modules.log_channel import loggable
+from UpinRobot.modules.helper_funcs.alternate import send_message
 
 
 @bot_admin
@@ -621,7 +621,7 @@ dispatcher.add_handler(DEMOTE_HANDLER)
 dispatcher.add_handler(SET_TITLE_HANDLER)
 dispatcher.add_handler(ADMIN_REFRESH_HANDLER)
 
-__mod_name__ = "👮Admins"
+__mod_name__ = "Admins"
 __command_list__ = [
     "adminlist", "admins", "invitelink", "promote", "demote", "admincache", "setgpic", "delgpic", "setgtitle", "setdesc"
 ]
