@@ -1,4 +1,4 @@
-from VegetaRobot import LOAD, LOGGER, NO_LOAD
+from UpinRobot import LOAD, LOGGER, NO_LOAD
 
 
 def __list_all_modules():
