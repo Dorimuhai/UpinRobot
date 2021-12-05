@@ -1,4 +1,4 @@
-from VegetaRobot import telethn as tbot
+from UpinRobot import telethn as tbot
 import os
 
 from gtts import gTTS
@@ -8,9 +8,9 @@ from telethon.tl import functions
 from telethon.tl import types
 from telethon.tl.types import *
 
-from VegetaRobot import *
+from UpinRobot import *
 
-from VegetaRobot.events import register
+from UpinRobot.events import register
 
 
 async def is_register_admin(chat, user):
@@ -89,6 +89,6 @@ sm,sn,so,sq,sr,st,su,sv,sw,ta,te,tg,th,tl,tr,uk,ur,uz,
 vi,xh,yi,yo,zh,zh_CN,zh_TW,zu`
 """
 
-__mod_name__ = "🗣TTS"
+__mod_name__ = "TTS"
 
 
