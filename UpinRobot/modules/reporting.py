@@ -1,10 +1,10 @@
 import html
 
-from VegetaRobot import (LOGGER, DRAGONS, TIGERS, WOLVES, dispatcher)
-from VegetaRobot.modules.helper_funcs.chat_status import (user_admin,
+from UpinRobot import (LOGGER, DRAGONS, TIGERS, WOLVES, dispatcher)
+from UpinRobot.modules.helper_funcs.chat_status import (user_admin,
                                                            user_not_admin)
-from VegetaRobot.modules.log_channel import loggable
-from VegetaRobot.modules.sql import reporting_sql as sql
+from UpinRobot.modules.log_channel import loggable
+from UpinRobot.modules.sql import reporting_sql as sql
 from telegram import (Chat, InlineKeyboardButton, InlineKeyboardMarkup,
                       ParseMode, Update)
 from telegram.error import BadRequest, Unauthorized
@@ -274,6 +274,6 @@ dispatcher.add_handler(SETTING_HANDLER)
 dispatcher.add_handler(REPORT_HANDLER, REPORT_GROUP)
 dispatcher.add_handler(ADMIN_REPORT_HANDLER, REPORT_GROUP)
 
-__mod_name__ = "⚠Report"
+__mod_name__ = "Report"
 __handlers__ = [(REPORT_HANDLER, REPORT_GROUP),
                 (ADMIN_REPORT_HANDLER, REPORT_GROUP), (SETTING_HANDLER)]
