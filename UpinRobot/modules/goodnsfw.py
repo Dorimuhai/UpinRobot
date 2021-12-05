@@ -1,18 +1,18 @@
-#this good nsfw module only created for @VegetaRobot and thanks to @Everythingsuckz, all suckz removed by @Ctzfamily
+#this good nsfw module only created for @UpintpiRobot and thanks to @Everythingsuckz, all suckz removed by @Ctzfamily
 import os
 import html
 import nekos
 import requests
 from PIL import Image
 from telegram import ParseMode
-from VegetaRobot import dispatcher, updater
-import VegetaRobot.modules.sql.nsfw_sql as sql
-from VegetaRobot.modules.log_channel import gloggable
+from UpinRobot import dispatcher, updater
+import UpinRobot.modules.sql.nsfw_sql as sql
+from UpinRobot.modules.log_channel import gloggable
 from telegram import Message, Chat, Update, Bot, MessageEntity
 from telegram.error import BadRequest, RetryAfter, Unauthorized
 from telegram.ext import CommandHandler, run_async, CallbackContext
-from VegetaRobot.modules.helper_funcs.filters import CustomFilters
-from VegetaRobot.modules.helper_funcs.chat_status import user_admin
+from UpinRobot.modules.helper_funcs.filters import CustomFilters
+from UpinRobot.modules.helper_funcs.chat_status import user_admin
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
 
 @run_async
@@ -206,8 +206,8 @@ __handlers__ = [
 ]
 
 __help__ = """
-Module credits: [VegetaRobot](https://github.com/Ctzfamily/VegetaRobot/edit/Vegeta/VegetaRobot/modules/nsfw.py) ,
-Also thanks to [EverythingSuckz](https://t.me/EverythingSuckz) for NSFW filter. and full sucks removed by [CT_PRO](t.me/ctzfamily)
+Module credits: [UpintpiRobot](https://github.com/Soedirmand/UpinRobot/edit/Upin/UpinRobot/modules/nsfw.py) ,
+Also thanks to [EverythingSuckz](https://t.me/EverythingSuckz) for NSFW filter. and full sucks removed by [SOEDIRMAND](t.me/Rimbahuns)
     
 Usage:
     
@@ -226,4 +226,4 @@ Commands :
  - /baka: Sends Random Baka Shout GIFs.
 """
 
-__mod_name__ = "🐰AnimePG"
+__mod_name__ = "AnimePG"
