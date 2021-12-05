@@ -1,5 +1,5 @@
 """
-module Creat my @VegetaRobot
+module Creat my @UpintpiRobot
 Copyrights to @PegasusXteam [•_•]
 """
 
@@ -7,17 +7,17 @@ import html
 import re
 from typing import Optional
 
-from VegetaRobot import LOGGER, TIGERS, dispatcher
-from VegetaRobot.modules.helper_funcs.chat_status import (bot_admin,
+from UpinRobot import LOGGER, TIGERS, dispatcher
+from UpinRobot.modules.helper_funcs.chat_status import (bot_admin,
                                                           user_admin_no_reply,
                                                            can_restrict,
                                                            connection_status,
                                                            is_user_admin,
                                                            user_admin)
-from VegetaRobot.modules.helper_funcs.extraction import (extract_user,
+from UpinRobot.modules.helper_funcs.extraction import (extract_user,
                                                           extract_user_and_text)
-from VegetaRobot.modules.helper_funcs.string_handling import extract_time
-from VegetaRobot.modules.log_channel import loggable
+from UpinRobot.modules.helper_funcs.string_handling import extract_time
+from UpinRobot.modules.log_channel import loggable
 
 from telegram import (
     Bot, 
