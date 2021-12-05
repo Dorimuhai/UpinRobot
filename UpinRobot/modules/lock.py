@@ -9,20 +9,20 @@ from telegram.utils.helpers import mention_html
 
 from alphabet_detector import AlphabetDetector
 
-import VegetaRobot.modules.sql.locks_sql as sql
-from VegetaRobot import dispatcher, DRAGONS, LOGGER
-from VegetaRobot.modules.disable import DisableAbleCommandHandler
-from VegetaRobot.modules.helper_funcs.chat_status import (
+import UpinRobot.modules.sql.locks_sql as sql
+from UpinRobot import dispatcher, DRAGONS, LOGGER
+from UpinRobot.modules.disable import DisableAbleCommandHandler
+from UpinRobot.modules.helper_funcs.chat_status import (
     can_delete,
     is_user_admin,
     user_not_admin,
     is_bot_admin,
     user_admin,
 )
-from VegetaRobot.modules.log_channel import loggable
-from VegetaRobot.modules.connection import connected
+from UpinRobot.modules.log_channel import loggable
+from UpinRobot.modules.connection import connected
 
-from VegetaRobot.modules.helper_funcs.alternate import send_message, typing_action
+from UpinRobot.modules.helper_funcs.alternate import send_message, typing_action
 
 ad = AlphabetDetector()
 
@@ -646,7 +646,7 @@ Locking bots will stop non-admins from adding bots to the chat.
  • Unlocking permission *pin* will allow members (non-admins) to pinned a message in a group
 """
 
-__mod_name__ = "🔐Lock"
+__mod_name__ = "Lock"
 
 LOCKTYPES_HANDLER = DisableAbleCommandHandler("locktypes", locktypes)
 LOCK_HANDLER = CommandHandler(
