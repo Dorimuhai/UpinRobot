@@ -1,7 +1,7 @@
 import asyncio, time, os, asyncio, json
 from telethon.tl.types import DocumentAttributeAudio
-from VegetaRobot.events import register
-from VegetaRobot.utils import progress
+from UpinRobot.events import register
+from UpinRobot.utils import progress
 from youtube_dl import YoutubeDL
 from youtube_dl.utils import (DownloadError, ContentTooShortError,
 
@@ -240,4 +240,4 @@ __help__ = """
  - `/song` <name> downloading song for yt and upload audio file.
 """
 
-__mod_name__ = "📥YT"
+__mod_name__ = "Youtube"
