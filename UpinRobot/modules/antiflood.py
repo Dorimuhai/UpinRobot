@@ -3,19 +3,19 @@ from typing import Optional, List
 
 from telegram import Message, Chat, Update, User, ChatPermissions
 
-from VegetaRobot import TIGERS, WOLVES, dispatcher
-from VegetaRobot.modules.helper_funcs.chat_status import (bot_admin,
+from UpinRobot import TIGERS, WOLVES, dispatcher
+from UpinRobot.modules.helper_funcs.chat_status import (bot_admin,
                                                            is_user_admin,
                                                            user_admin,
                                                            user_admin_no_reply)
-from VegetaRobot.modules.log_channel import loggable
-from VegetaRobot.modules.sql import antiflood_sql as sql
+from UpinRobot.modules.log_channel import loggable
+from UpinRobot.modules.sql import antiflood_sql as sql
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler, Filters, MessageHandler, run_async
 from telegram.utils.helpers import mention_html, escape_markdown
-from VegetaRobot.modules.helper_funcs.string_handling import extract_time
-from VegetaRobot.modules.connection import connected
-from VegetaRobot.modules.helper_funcs.alternate import send_message
+from UpinRobot.modules.helper_funcs.string_handling import extract_time
+from UpinRobot.modules.connection import connected
+from UpinRobot.modules.helper_funcs.alternate import send_message
 FLOOD_GROUP = 3
 
 
@@ -354,7 +354,7 @@ will result in restricting that user.
  `1w` = 1 week
  """
 
-__mod_name__ = "🔕flood"
+__mod_name__ = "flood"
 
 FLOOD_BAN_HANDLER = MessageHandler(
     Filters.all & ~Filters.status_update & Filters.group, check_flood)
