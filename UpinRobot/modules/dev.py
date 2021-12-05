@@ -3,8 +3,8 @@ import subprocess
 import sys
 from time import sleep
 
-from VegetaRobot import dispatcher
-from VegetaRobot.modules.helper_funcs.chat_status import dev_plus
+from UpinRobot import dispatcher
+from UpinRobot.modules.helper_funcs.chat_status import dev_plus
 from telegram import TelegramError, Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 
