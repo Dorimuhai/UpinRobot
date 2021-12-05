@@ -11,7 +11,7 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
 
-from VegetaRobot import (
+from UpinRobot import (
     DEV_USERS,
     LOGGER,
     OWNER_ID,
@@ -21,9 +21,9 @@ from VegetaRobot import (
     WOLVES,
     dispatcher,
 )
-import VegetaRobot.modules.sql.users_sql as sql
-from VegetaRobot.modules.disable import DisableAbleCommandHandler
-from VegetaRobot.modules.helper_funcs.chat_status import (
+import UpinRobot.modules.sql.users_sql as sql
+from UpinRobot.modules.disable import DisableAbleCommandHandler
+from UpinRobot.modules.helper_funcs.chat_status import (
     user_admin_no_reply,
     bot_admin,
     can_restrict,
@@ -35,11 +35,11 @@ from VegetaRobot.modules.helper_funcs.chat_status import (
     user_can_ban,
     can_delete,
 )
-from VegetaRobot.modules.helper_funcs.extraction import extract_user_and_text
-from VegetaRobot.modules.helper_funcs.string_handling import extract_time
-from VegetaRobot.modules.log_channel import gloggable, loggable
+from UpinRobot.modules.helper_funcs.extraction import extract_user_and_text
+from UpinRobot.modules.helper_funcs.string_handling import extract_time
+from UpinRobot.modules.log_channel import gloggable, loggable
 
-BAN_IMG= "https://telegra.ph/file/f5e5a31be9ba7ea30f9d0.jpg"
+BAN_IMG= "https://telegra.ph/file/10139851d5bf597ce8c25.jpg"
 
 @run_async
 @connection_status
@@ -537,7 +537,7 @@ dispatcher.add_handler(UNBAN_HANDLER)
 dispatcher.add_handler(ROAR_HANDLER)
 dispatcher.add_handler(PUNCHME_HANDLER)
 
-__mod_name__ = "📛Ban/Mute"
+__mod_name__ = "Ban/Mute"
 __handlers__ = [
     BAN_HANDLER,
 
