@@ -10,13 +10,13 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 from telegram.utils.helpers import escape_markdown
 
-import VegetaRobot.modules.fun_strings as fun
-from VegetaRobot import DEMONS, DRAGONS, dispatcher
-from VegetaRobot.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
-from VegetaRobot.modules.helper_funcs.alternate import typing_action
-from VegetaRobot.modules.helper_funcs.extraction import extract_user
+import UpinRobot.modules.fun_strings as fun
+from UpinRobot import DEMONS, DRAGONS, dispatcher
+from UpinRobot.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
+from UpinRobot.modules.helper_funcs.alternate import typing_action
+from UpinRobot.modules.helper_funcs.extraction import extract_user
 
-GN_IMG= "https://telegra.ph/file/6b67b1f44a669a634cab8.jpg"
+GN_IMG= "https://telegra.ph/file/5a4dc8f8cc2cdb408df18.jpg"
 
 @run_async
 @typing_action
@@ -190,5 +190,5 @@ dispatcher.add_handler(DARE_HANDLER)
 
 
 
-#guys this it you like pegasusXteam ask join @pegasusSupportofficial
-# © pegasusXteam
+#guys this it you like PegasusXteam ask join @allbefin
+# © PegasusXteam
