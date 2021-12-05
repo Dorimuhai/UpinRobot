@@ -1,6 +1,6 @@
 """
-(Copyright to @VegetaRobot
-Powered by @pegasusXteam
+(Copyright to @IpintpiRobot
+Powered by @allbefin
 """
 import html
 import os
