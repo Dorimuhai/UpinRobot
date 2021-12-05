@@ -15,25 +15,25 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html, escape_markdown
 
-from VegetaRobot import dispatcher, LOGGER, DRAGONS
-from VegetaRobot.modules.disable import DisableAbleCommandHandler
-from VegetaRobot.modules.helper_funcs.handlers import MessageHandlerChecker
-from VegetaRobot.modules.helper_funcs.chat_status import user_admin
-from VegetaRobot.modules.helper_funcs.extraction import extract_text
-from VegetaRobot.modules.helper_funcs.filters import CustomFilters
-from VegetaRobot.modules.helper_funcs.misc import build_keyboard_parser
-from VegetaRobot.modules.helper_funcs.msg_types import get_filter_type
-from VegetaRobot.modules.helper_funcs.string_handling import (
+from UpinRobot import dispatcher, LOGGER, DRAGONS
+from UpinRobot.modules.disable import DisableAbleCommandHandler
+from UpinRobot.modules.helper_funcs.handlers import MessageHandlerChecker
+from UpinRobot.modules.helper_funcs.chat_status import user_admin
+from UpinRobot.modules.helper_funcs.extraction import extract_text
+from UpinRobot.modules.helper_funcs.filters import CustomFilters
+from UpinRobot.modules.helper_funcs.misc import build_keyboard_parser
+from UpinRobot.modules.helper_funcs.msg_types import get_filter_type
+from UpinRobot.modules.helper_funcs.string_handling import (
     split_quotes,
     button_markdown_parser,
     escape_invalid_curly_brackets,
     markdown_to_html,
 )
-from VegetaRobot.modules.sql import cust_filters_sql as sql
+from UpinRobot.modules.sql import cust_filters_sql as sql
 
-from VegetaRobot.modules.connection import connected
+from UpinRobot.modules.connection import connected
 
-from VegetaRobot.modules.helper_funcs.alternate import send_message, typing_action
+from UpinRobot.modules.helper_funcs.alternate import send_message, typing_action
 
 HANDLER_GROUP = 10
 
@@ -621,7 +621,7 @@ Check `/markdownhelp` to know more!
 
 """
 
-__mod_name__ = "💫Filter"
+__mod_name__ = "Filter"
 
 FILTER_HANDLER = CommandHandler("filter", filters)
 STOP_HANDLER = CommandHandler("stop", stop_filter)
