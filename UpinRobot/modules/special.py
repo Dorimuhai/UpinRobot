@@ -7,10 +7,10 @@ from telegram.ext import Filters, CommandHandler
 from telegram.ext.dispatcher import run_async, CallbackContext
 
 import random
-import VegetaRobot.modules.sql.users_sql as sql
-from VegetaRobot.modules.helper_funcs.filters import CustomFilters
-from VegetaRobot import dispatcher, OWNER_ID, LOGGER
-from VegetaRobot.modules.disable import DisableAbleCommandHandler
+import UpinRobot.modules.sql.users_sql as sql
+from UpinRobot.modules.helper_funcs.filters import CustomFilters
+from UpinRobot import dispatcher, OWNER_ID, LOGGER
+from UpinRobot.modules.disable import DisableAbleCommandHandler
 USERS_GROUP = 4
 
 @run_async
@@ -67,7 +67,7 @@ Make me send a message to a specific chat.
 @all [text] for tagall members.
 """
 
-__mod_name__ = "👻Special"
+__mod_name__ = "Special"
 
 SNIPE_HANDLER = CommandHandler(
     "snipe",
