@@ -2,9 +2,9 @@ import sre_constants
 
 import regex
 import telegram
-from VegetaRobot import LOGGER, dispatcher
-from VegetaRobot.modules.disable import DisableAbleMessageHandler
-from VegetaRobot.modules.helper_funcs.regex_helper import (infinite_loop_check)
+from UpinRobot import LOGGER, dispatcher
+from UpinRobot.modules.disable import DisableAbleMessageHandler
+from UpinRobot.modules.helper_funcs.regex_helper import (infinite_loop_check)
 from telegram import Update
 from telegram.ext import CallbackContext, Filters, run_async
 
@@ -126,7 +126,7 @@ If you want to use these characters, make sure you escape them!
 *Example:* \\?.
 """.format(telegram.MAX_MESSAGE_LENGTH)
 
-__mod_name__ = "🤓Regexs"
+__mod_name__ = "Regexs"
 
 SED_HANDLER = DisableAbleMessageHandler(
     Filters.regex(r's([{}]).*?\1.*'.format("".join(DELIMITERS))),
