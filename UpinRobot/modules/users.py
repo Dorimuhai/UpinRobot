@@ -6,10 +6,10 @@ from telegram.error import BadRequest, Unauthorized
 from telegram.ext import (CallbackContext, CommandHandler, Filters,
                           MessageHandler, run_async)
 
-import VegetaRobot.modules.sql.users_sql as sql
-from VegetaRobot import DEV_USERS, LOGGER, OWNER_ID, dispatcher
-from VegetaRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
-from VegetaRobot.modules.sql.users_sql import get_all_users
+import UpinRobot.modules.sql.users_sql as sql
+from UpinRobot import DEV_USERS, LOGGER, OWNER_ID, dispatcher
+from UpinRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
+from UpinRobot.modules.sql.users_sql import get_all_users
 
 USERS_GROUP = 4
 CHAT_GROUP = 5
