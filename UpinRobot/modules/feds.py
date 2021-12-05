@@ -6,16 +6,16 @@ import time
 import uuid
 from io import BytesIO
 
-import VegetaRobot.modules.sql.feds_sql as sql
-from VegetaRobot import (EVENT_LOGS, LOGGER, OWNER_ID, DRAGONS, TIGERS, WOLVES,
+import UpinRobot.modules.sql.feds_sql as sql
+from UpinRobot import (EVENT_LOGS, LOGGER, OWNER_ID, DRAGONS, TIGERS, WOLVES,
                           dispatcher)
-from VegetaRobot.modules.disable import DisableAbleCommandHandler
-from VegetaRobot.modules.helper_funcs.alternate import send_message
-from VegetaRobot.modules.helper_funcs.chat_status import is_user_admin
-from VegetaRobot.modules.helper_funcs.extraction import (extract_unt_fedban,
+from UpinRobot.modules.disable import DisableAbleCommandHandler
+from UpinRobot.modules.helper_funcs.alternate import send_message
+from UpinRobot.modules.helper_funcs.chat_status import is_user_admin
+from UpinRobot.modules.helper_funcs.extraction import (extract_unt_fedban,
                                                           extract_user,
                                                           extract_user_fban)
-from VegetaRobot.modules.helper_funcs.string_handling import markdown_parser
+from UpinRobot.modules.helper_funcs.string_handling import markdown_parser
 from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, MessageEntity,
                       ParseMode, Update)
 from telegram.error import BadRequest, TelegramError, Unauthorized
@@ -2110,7 +2110,7 @@ def fed_user_help(update: Update, context: CallbackContext):
         parse_mode=ParseMode.MARKDOWN)
 
 
-__mod_name__ = "💀Feds"
+__mod_name__ = "Federations"
 
 __help__ = """
 Everything is fun, until a spammer starts entering your group, and you have to block it. Then you need to start banning more, and more, and it hurts.
