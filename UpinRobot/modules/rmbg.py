@@ -6,8 +6,8 @@ import requests
 from telethon import types
 from telethon.tl import functions
 
-from VegetaRobot.events import register
-from VegetaRobot import TEMP_DOWNLOAD_DIRECTORY, REM_BG_API_KEY, telethn as tbot
+from UpinRobot.events import register
+from UpinRobot import TEMP_DOWNLOAD_DIRECTORY, REM_BG_API_KEY, telethn as tbot
 
 async def is_register_admin(chat, user):
     if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):
