@@ -9,17 +9,17 @@ from telegram.ext import (CallbackContext, CommandHandler, Filters,
                           MessageHandler, run_async)
 from telegram.utils.helpers import mention_html
 
-import VegetaRobot.modules.sql.global_bans_sql as sql
-from VegetaRobot.modules.sql.users_sql import get_user_com_chats
-from VegetaRobot import (DEV_USERS, EVENT_LOGS, OWNER_ID, STRICT_GBAN, DRAGONS,
+import UpinRobot.modules.sql.global_bans_sql as sql
+from UpinRobot.modules.sql.users_sql import get_user_com_chats
+from UpinRobot import (DEV_USERS, EVENT_LOGS, OWNER_ID, STRICT_GBAN, DRAGONS,
                           SUPPORT_CHAT, SPAMWATCH_SUPPORT_CHAT, DEMONS, TIGERS,
                           WOLVES, sw, dispatcher)
-from VegetaRobot.modules.helper_funcs.chat_status import (is_user_admin,
+from UpinRobot.modules.helper_funcs.chat_status import (is_user_admin,
                                                            support_plus,
                                                            user_admin)
-from VegetaRobot.modules.helper_funcs.extraction import (extract_user,
+from UpinRobot.modules.helper_funcs.extraction import (extract_user,
                                                           extract_user_and_text)
-from VegetaRobot.modules.helper_funcs.misc import send_to_list
+from UpinRobot.modules.helper_funcs.misc import send_to_list
 
 GBAN_ENFORCE_GROUP = 6
  
@@ -524,7 +524,7 @@ dispatcher.add_handler(UNGBAN_HANDLER)
 dispatcher.add_handler(GBAN_LIST)
 dispatcher.add_handler(GBAN_STATUS)
 
-__mod_name__ = "🛡AntiSpam"
+__mod_name__ = "AntiSpam"
 __handlers__ = [GBAN_HANDLER, UNGBAN_HANDLER, GBAN_LIST, GBAN_STATUS]
 
 if STRICT_GBAN:  # enforce GBANS if this is set
