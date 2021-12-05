@@ -1,8 +1,8 @@
-# © @pegasusXteam - © @VegetaRobot
+# © @pegasusXteam - © @IpintpiRobot
 
-from VegetaRobot import dispatcher
-from VegetaRobot.modules.disable import DisableAbleCommandHandler
-from VegetaRobot.modules.helper_funcs.alternate import typing_action
+from UpinRobot import dispatcher
+from UpinRobot.modules.disable import DisableAbleCommandHandler
+from UpinRobot.modules.helper_funcs.alternate import typing_action
 from telegram import ParseMode
 from telegram.ext import run_async
 
@@ -324,7 +324,7 @@ __help__ = """
  ❍ `/text4`*:* reply to the text.
  ❍ `/text5`*:* reply to the text.
 """
-__mod_name__ = "🎇Styletext"
+__mod_name__ = "Styletext"
 
 TEXT1_HANDLER = DisableAbleCommandHandler("text1", text1)
 TEXT2_HANDLER = DisableAbleCommandHandler("text2", text2)
@@ -352,5 +352,5 @@ __handlers__ = [TEXT5_HANDLER]
 
 
 
-#this module only creat for @VegetaRobot don't copy it you copy this plz don't remove below text
-# © @VegetaRobot - © @pegasusXteam
+#this module only creat for @IpintpiRobot don't copy it you copy this plz don't remove below text
+# © @IpintpiRobot - © @pegasusXteam
