@@ -14,17 +14,17 @@ from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from VegetaRobot import (DEV_USERS, OWNER_ID, DRAGONS, DEMONS, TIGERS, WOLVES,
+from UpinRobot import (DEV_USERS, OWNER_ID, DRAGONS, DEMONS, TIGERS, WOLVES,
                           INFOPIC, dispatcher, sw)
-from VegetaRobot.__main__ import STATS, TOKEN, USER_INFO
-import VegetaRobot.modules.sql.userinfo_sql as sql
-from VegetaRobot.modules.disable import DisableAbleCommandHandler
-from VegetaRobot.modules.sql.global_bans_sql import is_user_gbanned
-from VegetaRobot.modules.sql.afk_sql import is_afk, check_afk_status
-from VegetaRobot.modules.sql.users_sql import get_user_num_chats
-from VegetaRobot.modules.helper_funcs.chat_status import sudo_plus
-from VegetaRobot.modules.helper_funcs.extraction import extract_user
-from VegetaRobot import telethn as SaitamaTelethonClient, TIGERS, DRAGONS, DEMONS
+from UpinRobot.__main__ import STATS, TOKEN, USER_INFO
+import UpinRobot.modules.sql.userinfo_sql as sql
+from UpinRobot.modules.disable import DisableAbleCommandHandler
+from UpinRobot.modules.sql.global_bans_sql import is_user_gbanned
+from UpinRobot.modules.sql.afk_sql import is_afk, check_afk_status
+from UpinRobot.modules.sql.users_sql import get_user_num_chats
+from UpinRobot.modules.helper_funcs.chat_status import sudo_plus
+from UpinRobot.modules.helper_funcs.extraction import extract_user
+from UpinRobot import telethn as SaitamaTelethonClient, TIGERS, DRAGONS, DEMONS
 
 
 def no_by_per(totalhp, percentage):
@@ -411,10 +411,10 @@ def stats(update: Update, context: CallbackContext):
                   [                  
                        InlineKeyboardButton(
                              text="Support",
-                             url=f"https://t.me/VegetaSupport"),
+                             url=f"https://t.me/allbefin"),
                        InlineKeyboardButton(
                              text="Updates",
-                             url="https://t.me/VegetaUpdatea")
+                             url="https://t.me/UpinIpinUpdates")
                      ] 
                 ]
             ),
@@ -555,7 +555,7 @@ dispatcher.add_handler(GET_BIO_HANDLER)
 dispatcher.add_handler(SET_ABOUT_HANDLER)
 dispatcher.add_handler(GET_ABOUT_HANDLER)
 
-__mod_name__ = "📜Info|afk"
+__mod_name__ = "Info|afk"
 __command_list__ = ["setbio", "bio", "setme", "me", "info"]
 __handlers__ = [
     ID_HANDLER, GIFID_HANDLER, INFO_HANDLER, SET_BIO_HANDLER, GET_BIO_HANDLER,
