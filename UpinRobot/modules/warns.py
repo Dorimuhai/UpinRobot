@@ -3,21 +3,21 @@ import re
 from typing import Optional
 
 import telegram
-from VegetaRobot import TIGERS, WOLVES, dispatcher
-from VegetaRobot.modules.disable import DisableAbleCommandHandler
-from VegetaRobot.modules.helper_funcs.chat_status import (bot_admin,
+from UpinRobot import TIGERS, WOLVES, dispatcher
+from UpinRobot.modules.disable import DisableAbleCommandHandler
+from UpinRobot.modules.helper_funcs.chat_status import (bot_admin,
                                                            can_restrict,
                                                            is_user_admin,
                                                            user_admin,
                                                            user_admin_no_reply)
-from VegetaRobot.modules.helper_funcs.extraction import (extract_text,
+from UpinRobot.modules.helper_funcs.extraction import (extract_text,
                                                           extract_user,
                                                           extract_user_and_text)
-from VegetaRobot.modules.helper_funcs.filters import CustomFilters
-from VegetaRobot.modules.helper_funcs.misc import split_message
-from VegetaRobot.modules.helper_funcs.string_handling import split_quotes
-from VegetaRobot.modules.log_channel import loggable
-from VegetaRobot.modules.sql import warns_sql as sql
+from UpinRobot.modules.helper_funcs.filters import CustomFilters
+from UpinRobot.modules.helper_funcs.misc import split_message
+from UpinRobot.modules.helper_funcs.string_handling import split_quotes
+from UpinRobot.modules.log_channel import loggable
+from UpinRobot.modules.sql import warns_sql as sql
 from telegram import (CallbackQuery, Chat, InlineKeyboardButton,
                       InlineKeyboardMarkup, Message, ParseMode, Update, User)
 from telegram.error import BadRequest
@@ -506,7 +506,7 @@ be a sentence, encompass it with quotes, as such: `/addwarn "very angry" This is
  • `/strongwarn <on/yes/off/no>`*:* If set to on, exceeding the warn limit will result in a ban. Else, will just punch.
 """
 
-__mod_name__ = "⚠Warns"
+__mod_name__ = "Warns"
 
 WARN_HANDLER = CommandHandler(["warn", "dwarn"], warn_user, filters=Filters.group)
 RESET_WARN_HANDLER = CommandHandler(["resetwarn", "resetwarns"],
