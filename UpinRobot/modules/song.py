@@ -4,11 +4,11 @@ import aiohttp
 import youtube_dl
 
 from pyrogram import filters
-from VegetaRobot import pgram
+from UpinRobot import pgram
 from youtube_search import YoutubeSearch
-from VegetaRobot.pyroerror import capture_err
-from VegetaRobot.modules.disable import DisableAbleCommandHandler
-from VegetaRobot import dispatcher
+from UpinRobot.pyroerror import capture_err
+from UpinRobot.modules.disable import DisableAbleCommandHandler
+from UpinRobot import dispatcher
 
 def time_to_seconds(time):
     stringt = str(time)
