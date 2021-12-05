@@ -9,20 +9,20 @@ from datetime import datetime
 import random
 from PIL import Image
 from io import BytesIO
-from VegetaRobot import telethn as bot
-from VegetaRobot import telethn as tgbot
-from VegetaRobot.events import register
-from VegetaRobot import dispatcher
+from UpinRobot import telethn as bot
+from UpinRobot import telethn as tgbot
+from UpinRobot.events import register
+from UpinRobot import dispatcher
 
 
 edit_time = 5
-""" =======================VEGETA====================== """
-file1 = "https://telegra.ph/file/bc258c88be230d824d687.jpg"
-file2 = "https://telegra.ph/file/6ddb38a0a85a18500d49a.jpg"
-file3 = "https://telegra.ph/file/7fd1f54fc821b3f8a15a0.jpg"
-file4 = "https://telegra.ph/file/ec11e66958ccebb5f96a8.jpg"
-file5 = "https://telegra.ph/file/f5e5a31be9ba7ea30f9d0.jpg"
-""" =======================VEGETA====================== """
+""" =======================UPIN====================== """
+file1 = "https://telegra.ph/file/10139851d5bf597ce8c25.jpg"
+file2 = "https://telegra.ph/file/f5cf989ff59da5bc122c5.jpg"
+file3 = "https://telegra.ph/file/12ff97a94c5fddf22ef6e.jpg"
+file4 = "https://telegra.ph/file/b2d80c675c720c28d2d31.jpg"
+file5 = "https://telegra.ph/file/5a4dc8f8cc2cdb408df18.jpg"
+""" =======================UPIN====================== """
 
 
 @register(pattern="/myinfo")
