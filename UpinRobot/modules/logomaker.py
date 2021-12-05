@@ -11,9 +11,9 @@ from io import BytesIO
 from requests import get
 from telethon.tl.types import InputMessagesFilterPhotos
 
-from VegetaRobot import OWNER_ID, SUPPORT_CHAT
-from VegetaRobot.events import register
-from VegetaRobot import telethn
+from UpinRobot import OWNER_ID, SUPPORT_CHAT
+from UpinRobot.events import register
+from UpinRobot import telethn
 from PIL import Image, ImageDraw, ImageFont
 
 
@@ -72,7 +72,7 @@ async def lego(event):
     pointsize = 500
     fillcolor = "black"
     shadowcolor = "blue"
-    fnt = glob.glob("./VegetaRobot/resources/LOGOS/*")
+    fnt = glob.glob("./UpinRobot/resources/LOGOS/*")
     randf = random.choice(fnt)
     font = ImageFont.truetype(randf, 140)
     w, h = draw.textsize(text, font=font)
@@ -84,7 +84,7 @@ async def lego(event):
     draw.text((x, y), text, font=font, fill="white", stroke_width=1, stroke_fill="black")
     fname = "logo.png"
     img.save(fname, "png")
-    await telethn.send_file(event.chat_id, file=fname, caption = f"**Made by @VegetaRobot**")         
+    await telethn.send_file(event.chat_id, file=fname, caption = f"**Made by @IpintpiRobot**")         
     await pesan.delete()
     if os.path.exists(fname):
             os.remove(fname)
