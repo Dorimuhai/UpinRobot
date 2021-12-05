@@ -24,9 +24,9 @@ from search_engine_parser import GoogleSearch
 from tswift import Song
 from youtubesearchpython import VideosSearch
 
-from VegetaRobot.utils.inlinehelper import *
-from VegetaRobot.utils.pluginhelpers import fetch, json_prettify
-from VegetaRobot import pgram, OPENWEATHERMAP_ID, TIME_API_KEY, SUPPORT_CHAT
+from UpinRobot.utils.inlinehelper import *
+from UpinRobot.utils.pluginhelpers import fetch, json_prettify
+from UpinRobot import pgram, OPENWEATHERMAP_ID, TIME_API_KEY, SUPPORT_CHAT
 
 dictionary = PyDictionary()
 
@@ -48,13 +48,13 @@ class AioHttp:
             return await resp.read()
 
 
-__mod_name__ = "♦️Inline"
+__mod_name__ = "Inline"
 __help__ = f"""
-INLINE BOT SERVICE OF @VegetaRobot
+INLINE BOT SERVICE OF @IpintpiRobot
 I'm more efficient when added as group admin. By the way these commands can be used by anyone in a group via inline.
 
 ──「 Syntax 」──
-   @VegetaRobot [command] [query]
+   @IpintpiRobot [command] [query]
 
 ──「 Commands Available 」──
 ☫ alive - Check Bot's Stats.
@@ -92,12 +92,12 @@ I'm more efficient when added as group admin. By the way these commands can be u
 ☫ pokedex [TEXT]: Pokemon Search
 """
 
-__MODULE__ = "🔷Inline"
+__MODULE__ = "Inline"
 __HELP__ = f"""
- ==>> **INLINE BOT SERVICE OF @VegetaRobot** <<==
+ ==>> **INLINE BOT SERVICE OF @IpintpiRobot** <<==
 `I'm more efficient when added as group admin. By the way these commands can be used by anyone in a group via inline.`
    >> Syntax <<
-@VegetaRobot [command] [query]
+@IpintpiRobot [command] [query]
    >> Commands Available <<
 ☫ **alive** - __Check Bot's Stats.__
 ☫ **yt [query]** - __Youtube Search.__
