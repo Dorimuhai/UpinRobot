@@ -11,7 +11,7 @@ from pyrogram.types import (
 from VegetaRobot import BOT_NAME
 
 # By @ZeusXRobot
-from VegetaRobot.resources.IMGEDITOR.edit_1 import (  # pylint:disable=import-error
+from UpinRobot.resources.IMGEDITOR.edit_1 import (  # pylint:disable=import-error
     black_white,
     box_blur,
     bright,
@@ -19,7 +19,7 @@ from VegetaRobot.resources.IMGEDITOR.edit_1 import (  # pylint:disable=import-er
     mix,
     normal_blur,
 )
-from VegetaRobot.resources.IMGEDITOR.edit_2 import (  # pylint:disable=import-error
+from UpinRobot.resources.IMGEDITOR.edit_2 import (  # pylint:disable=import-error
     cartoon,
     circle_with_bg,
     circle_without_bg,
@@ -29,13 +29,13 @@ from VegetaRobot.resources.IMGEDITOR.edit_2 import (  # pylint:disable=import-er
     sepia_mode,
     sticker,
 )
-from VegetaRobot.resources.IMGEDITOR.edit_3 import (  # pylint:disable=import-error
+from UpinRobot.resources.IMGEDITOR.edit_3 import (  # pylint:disable=import-error
     black_border,
     blue_border,
     green_border,
     red_border,
 )
-from VegetaRobot.resources.IMGEDITOR.edit_4 import (  # pylint:disable=import-error
+from UpinRobot.resources.IMGEDITOR.edit_4 import (  # pylint:disable=import-error
     inverted,
     removebg_plain,
     removebg_sticker,
@@ -45,7 +45,7 @@ from VegetaRobot.resources.IMGEDITOR.edit_4 import (  # pylint:disable=import-er
     rotate_270,
     round_sticker,
 )
-from VegetaRobot.resources.IMGEDITOR.edit_5 import (  # pylint:disable=import-error
+from UpinRobot.resources.IMGEDITOR.edit_5 import (  # pylint:disable=import-error
     normalglitch_1,
     normalglitch_2,
     normalglitch_3,
@@ -57,7 +57,7 @@ from VegetaRobot.resources.IMGEDITOR.edit_5 import (  # pylint:disable=import-er
     scanlineglitch_4,
     scanlineglitch_5,
 )
-from VegetaRobot import pgram
+from UpinRobot import pgram
 
 lel = 00000000
 # pylint:disable=import-error
@@ -449,9 +449,9 @@ async def cb_handler(client: pgram, query: CallbackQuery):
         elif query.data == "rmbgsticker":
             await removebg_sticker(client, query.message)
 
-__mod_name__ = "🖼Editor"
+__mod_name__ = "Editor"
 __help__ = """
-@ZeusXRobot have some advanced image editing tools inbuilt
+@UpintpiRobot have some advanced image editing tools inbuilt
 Bright, Circle, RemBG, Blur, Border, Flip, Glitch, Sticker maker and more
   🔹 `/edit [reply to image]`*:* Open the image editor
   🔹 `/rmbg [REPLY]`*:* Revove BG of replied image/sticker.
