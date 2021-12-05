@@ -7,9 +7,9 @@ from PIL import Image
 from telegram import Update
 from telegram.ext import CallbackContext, run_async
 
-from VegetaRobot import dispatcher
-from VegetaRobot.modules.disable import DisableAbleCommandHandler
-from VegetaRobot.modules.thonkify_dict import thonkifydict
+from UpinRobot import dispatcher
+from UpinRobot.modules.disable import DisableAbleCommandHandler
+from UpinRobot.modules.thonkify_dict import thonkifydict
 
 
 @run_async
