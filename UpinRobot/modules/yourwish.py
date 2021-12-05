@@ -1,30 +1,30 @@
 import random
-from VegetaRobot import telethn as tbot
+from UpinRobot import telethn as tbot
 from telethon import events
 
 @tbot.on(events.NewMessage(pattern="/wish"))
-async def wish(vegeta):
+async def wish(upin):
    if vegeta.is_reply:
          mm = random.randint(1,100)
-         lol = await vegeta.get_reply_message()
-         await tbot.send_message(vegeta.chat_id, f"**Your wish has been cast.✨**\n\n__chance of success {mm}%__", reply_to=lol)
-   if not vegeta.is_reply:
+         lol = await upin.get_reply_message()
+         await tbot.send_message(upin.chat_id, f"**Your wish has been cast.✨**\n\n__chance of success {mm}%__", reply_to=lol)
+   if not upin.is_reply:
          mm = random.randint(1,100)
-         VEGETA = "https://telegra.ph/file/68be46bb292a9230a584b.jpg"
-         await tbot.send_file(vegeta.chat_id, VEGETA,caption=f"**Your wish has been cast.✨**\n\n__chance of success {mm}%__", reply_to=vegeta)
-         lol = await vegeta.get_reply_message()
-         await tbot.send_file(vegeta.chat_id, f"**Your wish has been cast.✨**\n\n__chance of success {mm}%__", reply_to=lol, file=VEGETA)
-   if not vegeta.is_reply:
+         UPIN = "https://telegra.ph/file/10139851d5bf597ce8c25.jpg"
+         await tbot.send_file(upin.chat_id, UPIN,caption=f"**Your wish has been cast.✨**\n\n__chance of success {mm}%__", reply_to=upin)
+         lol = await upin.get_reply_message()
+         await tbot.send_file(upin.chat_id, f"**Your wish has been cast.✨**\n\n__chance of success {mm}%__", reply_to=lol, file=UPIN)
+   if not upin.is_reply:
          mm = random.randint(1,100)
-         VEGETA = "https://telegra.ph/file/68be46bb292a9230a584b.jpg"
-         await tbot.send_file(vegeta.chat_id,f"**Your wish has been cast.✨**\n\n__chance of success {mm}%__", reply_to=lol, file=VEGETA)
-         await tbot.send_file(vegeta.chat_id, VEGETA,caption=f"**Your wish has been cast.✨**\n__chance of success {mm}%__", reply_to=vegeta)
-         lol = await vegeta.get_reply_message()
-         await tbot.send_file(vegeta.chat_id, f"**Your wish has been cast.✨**\n__chance of success {mm}%__", reply_to=lol)
-   if not vegeta.is_reply:
+         UPIN = "https://telegra.ph/file/5a4dc8f8cc2cdb408df18.jpg"
+         await tbot.send_file(upin.chat_id,f"**Your wish has been cast.✨**\n\n__chance of success {mm}%__", reply_to=lol, file=UPIN)
+         await tbot.send_file(upin.chat_id, UPIN,caption=f"**Your wish has been cast.✨**\n__chance of success {mm}%__", reply_to=upin)
+         lol = await upin.get_reply_message()
+         await tbot.send_file(upin.chat_id, f"**Your wish has been cast.✨**\n__chance of success {mm}%__", reply_to=lol)
+   if not upin.is_reply:
          mm = random.randint(1,100)
-         VEGETA = "https://telegra.ph/file/68be46bb292a9230a584b.jpg"
-         await tbot.send_file(vegeta.chat_id, VEGETA,caption=f"**Your wish has been cast.✨**\n__chance of success {mm}%__", reply_to=lol,file=VEGETA)
+         UPIN = "https://telegra.ph/file/f5cf989ff59da5bc122c5.jpg"
+         await tbot.send_file(upin.chat_id, UPIN,caption=f"**Your wish has been cast.✨**\n__chance of success {mm}%__", reply_to=lol,file=UPIN)
 
         
    
