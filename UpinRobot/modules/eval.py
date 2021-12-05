@@ -5,8 +5,8 @@ import textwrap
 import traceback
 from contextlib import redirect_stdout
 
-from VegetaRobot import LOGGER, dispatcher
-from VegetaRobot.modules.helper_funcs.chat_status import dev_plus
+from UpinRobot import LOGGER, dispatcher
+from UpinRobot.modules.helper_funcs.chat_status import dev_plus
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 
