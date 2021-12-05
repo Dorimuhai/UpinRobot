@@ -1,6 +1,6 @@
-from VegetaRobot.modules.helper_funcs.chat_status import user_admin
-from VegetaRobot.modules.disable import DisableAbleCommandHandler
-from VegetaRobot import dispatcher
+from UpinRobot.modules.helper_funcs.chat_status import user_admin
+from UpinRobot.modules.disable import DisableAbleCommandHandler
+from UpinRobot import dispatcher
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram import MessageEntity, ParseMode, Update
@@ -105,7 +105,7 @@ MD_HELP_HANDLER = CommandHandler("markdownhelp", markdown_help)
 dispatcher.add_handler(ECHO_HANDLER)
 dispatcher.add_handler(MD_HELP_HANDLER)
 
-__mod_name__ = "🌠Extras"
+__mod_name__ = "Extras"
 __command_list__ = ["id", "echo"]
 __handlers__ = [
     ECHO_HANDLER,
