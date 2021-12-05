@@ -2,7 +2,7 @@
 # © @ZeusXRobot
 import aiohttp
 from pyrogram import filters
-from VegetaRobot import pgram as asuna
+from UpinRobot import pgram as asuna
 
 @asuna.on_message(filters.command('pokedex'))
 async def PokeDex(_, message):
