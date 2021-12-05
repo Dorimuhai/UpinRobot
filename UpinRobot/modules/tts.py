@@ -12,12 +12,12 @@ import json
 import urllib.request
 import urllib.parse
 import requests
-from VegetaRobot import (DEV_USERS, OWNER_ID, DRAGONS, SUPPORT_CHAT, DEMONS,
+from UpinRobot import (DEV_USERS, OWNER_ID, DRAGONS, SUPPORT_CHAT, DEMONS,
                           TIGERS, WOLVES, dispatcher,updater)
-from VegetaRobot.__main__ import STATS, TOKEN, USER_INFO
-from VegetaRobot.modules.disable import DisableAbleCommandHandler
-from VegetaRobot.modules.helper_funcs.filters import CustomFilters
-from VegetaRobot.modules.helper_funcs.chat_status import sudo_plus, user_admin
+from UpinRobot.__main__ import STATS, TOKEN, USER_INFO
+from UpinRobot.modules.disable import DisableAbleCommandHandler
+from UpinRobot.modules.helper_funcs.filters import CustomFilters
+from UpinRobot.modules.helper_funcs.chat_status import sudo_plus, user_admin
 from telegram import MessageEntity, ParseMode, Update, constants
 from telegram.error import BadRequest
 from emoji import UNICODE_EMOJI
