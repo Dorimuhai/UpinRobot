@@ -2,9 +2,9 @@
 
 from pyrogram import filters
 
-from VegetaRobot import pgram #pgram
-from VegetaRobot.utils.errors import capture_err
-from VegetaRobot.modules.MODULESHELPER.carbonfunc import make_carbon
+from UpinRobot import pgram #pgram
+from UpinRobot.utils.errors import capture_err
+from UpinRobot.modules.MODULESHELPER.carbonfunc import make_carbon
 
 
 @pgram.on_message(filters.command("carbon"))
@@ -25,4 +25,4 @@ async def carbon_func(_, message):
     await m.delete()
     carbon.close()
 
-#ZeusXRobot
+#IpintpiRobot
