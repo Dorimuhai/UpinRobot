@@ -1,6 +1,6 @@
-from VegetaRobot import telethn as tbot
+from UpinRobot import telethn as tbot
 import os
-from VegetaRobot.events import register
+from UpinRobot.events import register
 import secureme
 
 @register(pattern="^/encrypt ?(.*)")
