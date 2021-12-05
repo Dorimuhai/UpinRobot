@@ -1,5 +1,5 @@
-from VegetaRobot.events import register
-from VegetaRobot import telethn as tbot
+from UpinRobot.events import register
+from UpinRobot import telethn as tbot
 TMP_DOWNLOAD_DIRECTORY = "./"
 from telethon import events
 import os
