@@ -2,10 +2,10 @@ import importlib
 from typing import Union
 
 from future.utils import string_types
-from VegetaRobot import dispatcher
-from VegetaRobot.modules.helper_funcs.handlers import (CMD_STARTERS,
+from UpinRobot import dispatcher
+from UpinRobot.modules.helper_funcs.handlers import (CMD_STARTERS,
                                                         SpamChecker)
-from VegetaRobot.modules.helper_funcs.misc import is_module_loaded
+from UpinRobot.modules.helper_funcs.misc import is_module_loaded
 from telegram import ParseMode, Update
 from telegram.ext import (CallbackContext, CommandHandler, Filters,
                           MessageHandler, RegexHandler)
@@ -344,7 +344,7 @@ if is_module_loaded(FILENAME):
     • `/listcmds`*:* list all possible toggleable commands
     """
 
-    __mod_name__ = "🔐Disable"
+    __mod_name__ = "Disable"
 
 else:
     DisableAbleCommandHandler = CommandHandler
