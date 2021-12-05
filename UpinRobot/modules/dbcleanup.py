@@ -1,9 +1,9 @@
 from time import sleep
 
-import VegetaRobot.modules.sql.global_bans_sql as gban_sql
-import VegetaRobot.modules.sql.users_sql as user_sql
-from VegetaRobot import DEV_USERS, OWNER_ID, dispatcher
-from VegetaRobot.modules.helper_funcs.chat_status import dev_plus
+import UpinRobot.modules.sql.global_bans_sql as gban_sql
+import UpinRobot.modules.sql.users_sql as user_sql
+from UpinRobot import DEV_USERS, OWNER_ID, dispatcher
+from UpinRobot.modules.helper_funcs.chat_status import dev_plus
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
@@ -145,5 +145,5 @@ BUTTON_HANDLER = CallbackQueryHandler(callback_button, pattern='db_.*')
 dispatcher.add_handler(DB_CLEANUP_HANDLER)
 dispatcher.add_handler(BUTTON_HANDLER)
 
-__mod_name__ = "♻DBCleanup"
+__mod_name__ = "DBCleanup"
 __handlers__ = [DB_CLEANUP_HANDLER, BUTTON_HANDLER]
