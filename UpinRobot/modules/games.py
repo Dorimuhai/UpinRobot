@@ -1,6 +1,6 @@
 from telethon.tl.types import InputMediaDice
 
-from VegetaRobot.events import register
+from UpinRobot.events import register
 
 
 @register(pattern="^/dice(?: |$)(.*)")
@@ -89,5 +89,5 @@ __help__="""
 """
  
 
-__mod_name__ = "🎮Game"
+__mod_name__ = "Game"
 
