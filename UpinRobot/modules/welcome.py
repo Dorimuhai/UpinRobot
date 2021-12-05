@@ -4,21 +4,21 @@ import re
 import time
 from functools import partial
 
-import VegetaRobot.modules.sql.welcome_sql as sql
-from VegetaRobot import (DEV_USERS, LOGGER, OWNER_ID, DRAGONS, DEMONS, TIGERS,
+import UpinRobot.modules.sql.welcome_sql as sql
+from UpinRobot import (DEV_USERS, LOGGER, OWNER_ID, DRAGONS, DEMONS, TIGERS,
                           WOLVES, sw, dispatcher, JOIN_LOGGER)
-from VegetaRobot.modules.helper_funcs.chat_status import (
+from UpinRobot.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
     user_admin,
 )
-from VegetaRobot.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from VegetaRobot.modules.helper_funcs.msg_types import get_welcome_type
-from VegetaRobot.modules.helper_funcs.string_handling import (
+from UpinRobot.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from UpinRobot.modules.helper_funcs.msg_types import get_welcome_type
+from UpinRobot.modules.helper_funcs.string_handling import (
     escape_invalid_curly_brackets,
     markdown_parser,
 )
-from VegetaRobot.modules.log_channel import loggable
-from VegetaRobot.modules.sql.global_bans_sql import is_user_gbanned
+from UpinRobot.modules.log_channel import loggable
+from UpinRobot.modules.sql.global_bans_sql import is_user_gbanned
 from telegram import (
     ChatPermissions,
     InlineKeyboardButton,
@@ -1066,7 +1066,7 @@ dispatcher.add_handler(CLEAN_SERVICE_HANDLER)
 dispatcher.add_handler(BUTTON_VERIFY_HANDLER)
 dispatcher.add_handler(WELCOME_MUTE_HELP)
 
-__mod_name__ = "🙏Welcome"
+__mod_name__ = "Welcome"
 __command_list__ = []
 __handlers__ = [
     NEW_MEM_HANDLER,
