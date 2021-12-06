@@ -1,4 +1,4 @@
-#this good nsfw module only created for @UpintpiRobot and thanks to @Everythingsuckz, all suckz removed by @Ctzfamily
+#this good nsfw module only created for @UpintpiRobot and thanks to @Everythingsuckz, all suckz removed by @Rimbahuns
 import os
 import html
 import nekos
