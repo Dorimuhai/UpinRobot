@@ -3,7 +3,7 @@ import re
 import os
 import html
 import requests
-import VegetaRobot.modules.sql.chatbot_sql as sql
+import UpinRobot.modules.sql.chatbot_sql as sql
 
 from time import sleep
 from telegram import ParseMode
@@ -15,10 +15,10 @@ from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
 from telegram.error import BadRequest, RetryAfter, Unauthorized
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
 
-from VegetaRobot.modules.helper_funcs.filters import CustomFilters
-from VegetaRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
-from VegetaRobot import dispatcher, updater, SUPPORT_CHAT
-from VegetaRobot.modules.log_channel import gloggable
+from UpinRobot.modules.helper_funcs.filters import CustomFilters
+from UpinRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
+from UpinRobot import dispatcher, updater, SUPPORT_CHAT
+from UpinRobot.modules.log_channel import gloggable
 
 @run_async
 @user_admin_no_reply
@@ -40,7 +40,7 @@ def kukirm(update: Update, context: CallbackContext) -> str:
             )
         else:
             update.effective_message.edit_text(
-                "super saiyan Vegeta Chatbot disable by {}.".format(mention_html(user.id, user.first_name)),
+                "Upin & Ipin Chatbot disable by {}.".format(mention_html(user.id, user.first_name)),
                 parse_mode=ParseMode.HTML,
             )
 
@@ -66,7 +66,7 @@ def kukiadd(update: Update, context: CallbackContext) -> str:
             )
         else:
             update.effective_message.edit_text(
-                "super saiyan Vegeta Chatbot enable by {}.".format(mention_html(user.id, user.first_name)),
+                "Upin & Ipin Chatbot enable by {}.".format(mention_html(user.id, user.first_name)),
                 parse_mode=ParseMode.HTML,
             )
 
@@ -95,7 +95,7 @@ def kuki(update: Update, context: CallbackContext):
 
 def kuki_message(context: CallbackContext, message):
     reply_message = message.reply_to_message
-    if message.text.lower() == "kuki":
+    if message.text.lower() == "upin":
         return True
     if reply_message:
         if reply_message.from_user.id == context.bot.get_me().id:
@@ -119,13 +119,13 @@ def chatbot(update: Update, context: CallbackContext):
         bot.send_chat_action(chat_id, action="typing")
         kukiurl = requests.get('https://www.kukiapi.xyz/api/apikey=KUKIg76Fg4EIo/Cutiepii/@Awesome_RJ/message='+Message)
         Kuki = json.loads(kukiurl.text)
-        kuki = Kuki['reply']
+        kuki = upin['reply']
         sleep(0.3)
         message.reply_text(kuki, timeout=60)
 
 def list_all_chats(update: Update, context: CallbackContext):
     chats = sql.get_all_kuki_chats()
-    text = "<b>Vegeta Enabled Chats</b>\n"
+    text = "<b>Upin Enabled Chats</b>\n"
     for chat in chats:
         try:
             x = context.bot.get_chat(int(*chat))
@@ -144,7 +144,7 @@ __help__ = """
 *Powered by ItelAi*
 """
 
-__mod_name__ = "🤖ChatBot"
+__mod_name__ = "ChatBot"
 
 
 CHATBOTK_HANDLER = CommandHandler("chatbot", kuki )
