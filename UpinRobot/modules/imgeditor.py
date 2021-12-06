@@ -8,9 +8,9 @@ from pyrogram.types import (
     Message,
 )
 
-from VegetaRobot import BOT_NAME
+from UpinRobot import BOT_NAME
 
-# By @ZeusXRobot
+# By @UpintpiRobot
 from UpinRobot.resources.IMGEDITOR.edit_1 import (  # pylint:disable=import-error
     black_white,
     box_blur,
