@@ -1,16 +1,16 @@
 import requests
-from EmikoRobot.events import register
-from EmikoRobot import telethn as tbot
+from UpinRobot.events import register
+from UpinRobot import telethn as tbot
 
 
-@register(pattern="^/ptl ?(.*)")
+@register(pattern="^/asp ?(.*)")
 async def asupan(event):
     try:
         resp = requests.get("https://api-tede.herokuapp.com/api/asupan/ptl").json()
         asupannya = f"{resp['url']}"
         return await tbot.send_file(event.chat_id, asupannya)
     except Exception:
-        await event.reply("`Error 404 not found...`")
+        await event.reply("`404 not found...`")
 
 
 @register(pattern="^/chika ?(.*)")
@@ -20,7 +20,7 @@ async def chika(event):
         chikanya = f"{resp['url']}"
         return await tbot.send_file(event.chat_id, chikanya)
     except Exception:
-        await event.reply("`Error 404 not found...`")
+        await event.reply("`404 not found...`")
 
 
 @register(pattern="^/hilih ?(.*)")
