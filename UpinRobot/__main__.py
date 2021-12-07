@@ -119,7 +119,7 @@ Click on the button bellow to get description about specifics command."""
 
 HELP_MSG = "Click the button below to get help manu in your pm."
 DONATE_STRING = """Contact to **@allbefin**"""
-HELP_IMG= "https://telegra.ph/file/9d2c6e3b28afe7619856e.jpg"
+HELP_IMG= "https://telegra.ph/file/5a4dc8f8cc2cdb408df18.jpg"
 GROUPSTART_IMG= "https://telegra.ph/file/15517691e12cf2505261c.mp4"
 
 STICKERS = ( "CAACAgUAAxkBAAEEl-ZhphuQxfziE6Ihh67EiSxBYbLNXgACUQADywzcOs2n2Pzc_EOFIgQ",
