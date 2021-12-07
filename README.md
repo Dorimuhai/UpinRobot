@@ -9,7 +9,7 @@
 <p align="center"><a href="https://t.me/IpintpiRobot"><img src="https://telegra.ph/file/10139851d5bf597ce8c25.jpg" width="400"></a></p>
 
 <p align="center">
-    <a href="https://github.com/Soedirmand/UpinRobot"> <img src="https://img.shields.io/github/repo-size/Soedirmand/UpinRobot?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/Soedirmand/UpinRobot"> <img src="https://img.shields.io/github/repo-size/Soedirmand/UpinRobot?color=Green&logo=github&logoColor=green&style=for-the-badge" /></a>
     <a href="https://github.com/Soedirmand/UpinRobot/commits/prince"> <img src="https://img.shields.io/github/last-commit/Soedirmand/UpinRobot?color=brown&logo=github&logoColor=green&style=for-the-badge" /></a>
     <a href="https://github.com/Soedirmand/Soedirmand/issues"> <img src="https://img.shields.io/github/issues/Soedirmand/UpinRobot?color=blueviolet&logo=github&logoColor=green&style=for-the-badge" /></a>
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?color=yellow&label=telethon&logo=python&logoColor=green&style=for-the-badge" /></a>
