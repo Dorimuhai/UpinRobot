@@ -6,7 +6,7 @@
   <a href="https://github.com/Soedirmand/UpinRobot/graphs/commit-activity" alt="Maintenance"> <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square" /> </a>
 </p>
 
-<p align="center"><a href="https://t.me/IpintpiRobot"><img src="https://telegra.ph/file/10139851d5bf597ce8c25.jpg" width="400"></a></p>
+<p align="center"><a href="https://t.me/IpintpiRobot"><img src="https://telegra.ph/file/5b7938f03240a8212aaf0.jpg" width="400"></a></p>
 
 <p align="center">
     <a href="https://github.com/Soedirmand/UpinRobot"> <img src="https://img.shields.io/github/repo-size/Soedirmand/UpinRobot?color=Green&logo=github&logoColor=green&style=for-the-badge" /></a>
