@@ -726,7 +726,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Vegeta is now alive and functioning")
+        LOGGER.info("Upin is now alive and functioning")
         updater.start_polling(timeout=15, read_latency=4, clean=True)
 
     if len(argv) not in (1, 3, 4):
