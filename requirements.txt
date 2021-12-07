@@ -1,7 +1,9 @@
 future
 faker
 motor
+gpytranslate
 PyDictionary==2.0.1
+Pyrogram
 emoji
 lxml
 beautifulsoup4
