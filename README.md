@@ -18,10 +18,10 @@
 > If You're Going To Fork This Repo Then Don't Forget To Hit a Star ✯
 ## Available on Telegram as [IpinRobot](https://t.me/IpintpiRobot)
 
-## 💜 Deploy Bot
+### Deploy Bot
 The easiest way to deploy this Bot
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Soedirmand/UpinRobot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-dark pink?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Soedirmand/UpinRobot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
 ### Github Stats
 ![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=Soedirmand&show_icons=true&theme=radical)<br>
