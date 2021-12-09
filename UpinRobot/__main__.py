@@ -804,30 +804,30 @@ def main():
         except BadRequest as e:
             LOGGER.warning(e.message)
 
-    test_handler = CommandHandler("test", test)
-    start_handler = CommandHandler("start", start)
+    test_handler = CommandHandler("test", test, run_async=True)
+    start_handler = CommandHandler("start", start, run_async=True)
 
-    help_handler = CommandHandler("help", get_help)
+    help_handler = CommandHandler("help", get_help, run_async=True)
     help_callback_handler = CallbackQueryHandler(
-        help_button, pattern=r"help_.*")
+        help_button, pattern=r"help_.*", run_async=True
     )
 
-    settings_handler = CommandHandler("settings", get_settings)
+    settings_handler = CommandHandler("settings", get_settings, run_async=True)
     settings_callback_handler = CallbackQueryHandler(
-        settings_button, pattern=r"stngs_")
+        settings_button, pattern=r"stngs_", run_async=True
     )
 
     about_callback_handler = CallbackQueryHandler(
-        upin_about_callback, pattern=r"upin_")
+        upin_about_callback, pattern=r"upin_", run_async=True
     )
 
     source_callback_handler = CallbackQueryHandler(
-        Source_about_callback, pattern=r"source_")
+        Source_about_callback, pattern=r"source_", run_async=True
     )
 
-    donate_handler = CommandHandler("donate", donate)
+    donate_handler = CommandHandler("donate", donate, run_async=True)
     migrate_handler = MessageHandler(
-        Filters.status_update.migrate, migrate_chats)
+        Filters.status_update.migrate, migrate_chats, run_async=True
     )
 
     dispatcher.add_handler(test_handler)
@@ -864,7 +864,7 @@ def main():
     updater.idle()
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
     telethn.start(bot_token=TOKEN)
     main()
