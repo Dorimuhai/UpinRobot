@@ -51,12 +51,7 @@ MessageHandlerChecker = AntiSpam()
 
 class CustomCommandHandler(CommandHandler):
 
-    def __init__(self,
-                 command,
-                 callback,
-                 admin_ok=False,
-                 allow_edit=False,
-                 **kwargs):
+    def __init__(self, command, callback, admin_ok=False, allow_edit=False, **kwargs):
         super().__init__(command, callback, **kwargs)
 
         if allow_edit is False:
