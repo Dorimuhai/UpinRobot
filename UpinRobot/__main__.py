@@ -78,22 +78,18 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
- ──『[ᴜ&ɪ](https://telegra.ph/file/10139851d5bf597ce8c25.jpg)』
-
 *Hello {} !*
-✪*ᴜᴘɪɴ ɪᴘɪɴ* ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ! 
+✪ Upin Ipin a powerful group management bot built to help you manage your group [✨](https://telegra.ph/file/11b5922a33de9968cedfe.jpg)
 ────────────────────────
 • *Uptime:* `{}`
 • `{}` *users, across* `{}` *chats.*
-──────────────────────── 
-*ᴊᴏɪɴ ᴏꜰꜰɪᴄɪᴀʟ* -
-[ᴍᴀɪɴᴛᴀɪɴᴇᴅ](t.me/Rimbahuns) - [ᴄʟɪᴄᴋ](t.me/allbefin)\n
-──『*ᴛʜᴀɴᴋs  ғᴏʀ  ᴜsɪɴɢ*』
+────────────────────────
+✪ Hit /help to see my available commands.
 """
 
 buttons = [
     [
-        InlineKeyboardButton(text="➗ Add Emiko To Your Group ➗", url="t.me/IpintpiRobot?startgroup=new"),
+        InlineKeyboardButton(text="➗ Add Ipin To Your Group ➗", url="t.me/IpintpiRobot?startgroup=new"),
     ],
     [
         InlineKeyboardButton(text="Get Help", callback_data="help_back"),
@@ -111,16 +107,15 @@ buttons = [
 HELP_STRINGS = """
 Click on the button bellow to get description about specifics command."""
 
-HELP_MSG = "Click the button below to get help manu in your pm."
-DONATE_STRING = """Contact to **@allbefin**"""
-HELP_IMG= "https://telegra.ph/file/5a4dc8f8cc2cdb408df18.jpg"
-GROUPSTART_IMG= "https://telegra.ph/file/15517691e12cf2505261c.mp4"
+EMI_IMG = "https://telegra.ph/file/5ff1cb39902809148f07f.jpg"
 
-STICKERS = ( "CAACAgUAAxkBAAEEl-ZhphuQxfziE6Ihh67EiSxBYbLNXgACUQADywzcOs2n2Pzc_EOFIgQ",
-           "CAACAgUAAxkBAAEEl-ZhphuQxfziE6Ihh67EiSxBYbLNXgACUQADywzcOs2n2Pzc_EOFIgQ",
-           "CAACAgUAAxkBAAEEl-ZhphuQxfziE6Ihh67EiSxBYbLNXgACUQADywzcOs2n2Pzc_EOFIgQ",
-           "CAACAgUAAxkBAAEEl-ZhphuQxfziE6Ihh67EiSxBYbLNXgACUQADywzcOs2n2Pzc_EOFIgQ", )
-           
+DONATE_STRING = """Heya, glad to hear you want to donate!
+ You can support the project by contacting @Rimbahuns \
+ Supporting isnt always financial! \
+ Those who cannot provide monetary support are welcome to help us develop the bot at ."""
+
+HELP_IMG= "https://telegra.ph/file/5a4dc8f8cc2cdb408df18.jpg"
+
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
@@ -320,7 +315,7 @@ def help_button(update, context):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "Here is the help for the *{}* module:\n".format(
+                "Powered by @IpintpiRobot\nHere is the help for the *{}* module:\n".format(
                     HELPABLE[module].__mod_name__
                 )
                 + HELPABLE[module].__help__
@@ -330,7 +325,8 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="Go Back", callback_data="help_back")]]
+                    [[InlineKeyboardButton(text="Go Back", callback_data="help_back"),
+                      InlineKeyboardButton(text="Go Home", callback_data="upin_back")]]
                 ),
             )
 
@@ -471,7 +467,7 @@ def upin_about_callback(update, context):
     elif query.data == "upin_credit":
         query.message.edit_text(
             text=f"๏ Credis for Upin\n"
-            "\nHere Developers Making And Give Inspiration For Made The EmikoRobot",
+            "\nHere Developers Making And Give Inspiration For Made The UpinRobot",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -553,8 +549,8 @@ def get_help(update: Update, context: CallbackContext):
                 ),
             )
             return
-        update.effective_message.reply_text(
-            "Contact me in PM to get the list of possible commands.",
+        update.effective_message.reply_photo(
+            HELP_IMG, HELP_MSG,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -580,7 +576,7 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="help_back")]]
+                [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
             ),
         )
 
