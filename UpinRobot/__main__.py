@@ -92,17 +92,17 @@ PM_START_TEXT = """
 
 buttons = [
     [
-        InlineKeyboardButton(text="➗ ᴀᴅᴅ ɪᴘɪɴ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➗", url="t.me/IpintpiRobot?startgroup=true"),
+        InlineKeyboardButton(text="☆ ᴀᴅᴅ ɪᴘɪɴ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ☆", url="t.me/IpintpiRobot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="☆ ᴄʜᴀɴɴᴇʟ ☆", url="t.me/UpinIpinUpdates"),
+        InlineKeyboardButton(text="☆ ᴄʜᴀɴɴᴇʟ", url="t.me/UpinIpinUpdates"),
         InlineKeyboardButton(
-            text="ᴛʀʏ ɪɴʟɪɴᴇ​​", switch_inline_query_current_chat=""
+            text="☆ ᴛʀʏ ɪɴʟɪɴᴇ​​", switch_inline_query_current_chat=""
         ),
     ],
     [
         InlineKeyboardButton(
-            text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅ", callback_data="help_back"),
+            text="☆ ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅ ☆", callback_data="help_back"),
     ],
 ]
 
