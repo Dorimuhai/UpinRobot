@@ -79,27 +79,27 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 *Hello {} !*
-✪ Upin Ipin a powerful group management bot built to help you manage your group [✨](https://telegra.ph/file/11b5922a33de9968cedfe.jpg)
+✪ I'm an kartun-theme management bot [✨](https://telegra.ph/file/10139851d5bf597ce8c25.jpg)
 ────────────────────────
-• *Uptime:* `{}`
-• `{}` *users, across* `{}` *chats.*
+× *Uptime:* `{}`
+× `{}` *users, across* `{}` *chats.*
 ────────────────────────
 ✪ Hit /help to see my available commands.
 """
 
 buttons = [
     [
-        InlineKeyboardButton(text="➗ Add Ipin To Your Group ➗", url="t.me/IpintpiRobot?startgroup=new"),
+        InlineKeyboardButton(text="About", callback_data="upin_"),
     ],
     [
-        InlineKeyboardButton(text="Get Help", callback_data="help_back"),
+        InlineKeyboardButton(text="Help", callback_data="help_back"),
         InlineKeyboardButton(
-            text="Try inline!​​", switch_inline_query_current_chat=""
+            text="Inline!​​", switch_inline_query_current_chat=""
         ),
     ],
     [
         InlineKeyboardButton(
-            text="About Ipin Robot", callback_data="upin_"),
+            text="➗ Add Upin To Your Group ➗", url="t.me/IpintpiRobot?startgroup=new"),
     ],
 ]
 
@@ -107,7 +107,7 @@ buttons = [
 HELP_STRINGS = """
 Click on the button bellow to get description about specifics command."""
 
-EMI_IMG = "https://telegra.ph/file/5ff1cb39902809148f07f.jpg"
+EMI_IMG = "https://telegra.ph/file/10139851d5bf597ce8c25.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project by contacting @Rimbahuns \
@@ -115,6 +115,7 @@ DONATE_STRING = """Heya, glad to hear you want to donate!
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
 HELP_IMG= "https://telegra.ph/file/5a4dc8f8cc2cdb408df18.jpg"
+GROUPSTART_IMG= "https://telegra.ph/file/15517691e12cf2505261c.mp4"
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -803,23 +804,37 @@ def main():
         except BadRequest as e:
             LOGGER.warning(e.message)
 
+    test_handler = CommandHandler("test", test)
+    start_handler = CommandHandler("start", start)
 
-    start_handler = DisableAbleCommandHandler("start", start)
-
-    help_handler = DisableAbleCommandHandler("help", get_help)
-    help_callback_handler = CallbackQueryHandler(help_button, pattern=r"help_.*")
+    help_handler = CommandHandler("help", get_help)
+    help_callback_handler = CallbackQueryHandler(
+        help_button, pattern=r"help_.*")
+    )
 
     settings_handler = CommandHandler("settings", get_settings)
-    settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
+    settings_callback_handler = CallbackQueryHandler(
+        settings_button, pattern=r"stngs_")
+    )
 
-    data_callback_handler = CallbackQueryHandler(upin_data_callback, pattern=r"upin_")
+    about_callback_handler = CallbackQueryHandler(
+        upin_about_callback, pattern=r"upin_")
+    )
+
+    source_callback_handler = CallbackQueryHandler(
+        Source_about_callback, pattern=r"source_")
+    )
+
     donate_handler = CommandHandler("donate", donate)
-    migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
+    migrate_handler = MessageHandler(
+        Filters.status_update.migrate, migrate_chats)
+    )
 
-    # dispatcher.add_handler(test_handler)
+    dispatcher.add_handler(test_handler)
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
-    dispatcher.add_handler(data_callback_handler)
+    dispatcher.add_handler(about_callback_handler)
+    dispatcher.add_handler(source_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
@@ -838,8 +853,8 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Upin is now alive and functioning")
-        updater.start_polling(timeout=15, read_latency=4, clean=True)
+        LOGGER.info("Using long polling.")
+        updater.start_polling(timeout=15, read_latency=4, drop_pending_updates=True)
 
     if len(argv) not in (1, 3, 4):
         telethn.disconnect()
@@ -849,7 +864,7 @@ def main():
     updater.idle()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
     telethn.start(bot_token=TOKEN)
     main()
