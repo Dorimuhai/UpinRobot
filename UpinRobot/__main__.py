@@ -102,7 +102,7 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
-            text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅ", callback_data="help_back"
+            text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅ", callback_data="help_back"),
     ],
 ]
 
