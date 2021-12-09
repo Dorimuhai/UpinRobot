@@ -92,17 +92,17 @@ PM_START_TEXT = """
 
 buttons = [
     [
-        InlineKeyboardButton(text="➗ ☆ ᴀᴅᴅ ɪᴘɪɴ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ☆ ➗", url="t.me/IpintpiRobot?startgroup=true"),
+        InlineKeyboardButton(text="➗ ᴀᴅᴅ ɪᴘɪɴ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➗", url="t.me/IpintpiRobot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="☆ ᴄʜᴀɴɴᴇʟ ☆", callback_data="upin"),
+        InlineKeyboardButton(text="☆ ᴄʜᴀɴɴᴇʟ ☆", url="t.me/UpinIpinUpdates"),
         InlineKeyboardButton(
             text="ᴛʀʏ ɪɴʟɪɴᴇ​​", switch_inline_query_current_chat=""
         ),
     ],
     [
         InlineKeyboardButton(
-            text="☆ ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅ ☆", url="t.me/EmiexRobot?startgroup=new"),
+            text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅ", callback_data="help_back"
     ],
 ]
 
@@ -110,7 +110,11 @@ HELP_STRINGS = """
 Click on the button bellow to get description about specifics command."""
 
 HELP_MSG = "Click the button below to get help manu in your pm."
-DONATE_STRING = """Contact to **@allbefin**"""
+DONATE_STRING = """Heya, glad to hear you want to donate!
+ You can support the project by contacting @Rimbahuns \
+ Supporting isnt always financial! \
+ Those who cannot provide monetary support are welcome to help us develop the bot at ."""
+
 HELP_IMG= "https://telegra.ph/file/5a4dc8f8cc2cdb408df18.jpg"
 GROUPSTART_IMG= "https://telegra.ph/file/15517691e12cf2505261c.mp4"
 
