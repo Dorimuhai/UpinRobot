@@ -21,6 +21,7 @@ from UpinRobot import (
     StartTime,
     telethn,
     updater)
+)
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
@@ -46,7 +47,6 @@ from telegram.ext import (
 )
 from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
-
 
 
 def get_readable_time(seconds: int) -> str:
@@ -81,10 +81,12 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """
  ──『[ᴜ&ɪ](https://telegra.ph/file/10139851d5bf597ce8c25.jpg)』
 
-*ʜɪ ᴛʜᴇʀᴇ*!!
-──────────────────────
-*ᴜᴘɪɴ ɪᴘɪɴ* ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ!
-──────────────────────
+*Hello {} !*
+✪*ᴜᴘɪɴ ɪᴘɪɴ* ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ! 
+────────────────────────
+• *Uptime:* `{}`
+• `{}` *users, across* `{}` *chats.*
+──────────────────────── 
 *ᴊᴏɪɴ ᴏꜰꜰɪᴄɪᴀʟ* -
 [ᴍᴀɪɴᴛᴀɪɴᴇᴅ](t.me/Rimbahuns) - [ᴄʟɪᴄᴋ](t.me/allbefin)\n
 ──『*ᴛʜᴀɴᴋs  ғᴏʀ  ᴜsɪɴɢ*』
@@ -92,27 +94,20 @@ PM_START_TEXT = """
 
 buttons = [
     [
-        InlineKeyboardButton(
-                            text="☆ ᴀᴅᴅ ɪᴘɪɴ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ☆",
-                            url="t.me/IpintpiRobot?startgroup=true"),
-                    ],
-                   [
-                       InlineKeyboardButton(text="☆ ɴᴇᴛᴡᴏʀᴋ", url="t.me/IpinXteam"),
-                       InlineKeyboardButton(text="☆ ʟᴏɢꜱ", url="t.me/joinlogsk"),
-                     ],
-                    [                  
-                       InlineKeyboardButton(
-                             text="☆ ꜱᴜᴘᴘᴏʀᴛ",
-                             url=f"https://t.me/{SUPPORT_CHAT}"),
-                       InlineKeyboardButton(
-                             text="☆ ᴄʜᴀɴɴᴇʟ ☆",
-                             url=f"https://t.me/{UPDATES_CHANNEL}"),
-                        ],
-                       [
-                           InlineKeyboardButton(text="☆ ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅ ☆", callback_data="help_back"
-         ),
+        InlineKeyboardButton(text="➗ Add Emiko To Your Group ➗", url="t.me/IpintpiRobot?startgroup=new"),
     ],
-] 
+    [
+        InlineKeyboardButton(text="Get Help", callback_data="help_back"),
+        InlineKeyboardButton(
+            text="Try inline!​​", switch_inline_query_current_chat=""
+        ),
+    ],
+    [
+        InlineKeyboardButton(
+            text="About Ipin Robot", callback_data="upin_"),
+    ],
+]
+
 
 HELP_STRINGS = """
 Click on the button bellow to get description about specifics command."""
@@ -127,7 +122,6 @@ STICKERS = ( "CAACAgUAAxkBAAEEl-ZhphuQxfziE6Ihh67EiSxBYbLNXgACUQADywzcOs2n2Pzc_E
            "CAACAgUAAxkBAAEEl-ZhphuQxfziE6Ihh67EiSxBYbLNXgACUQADywzcOs2n2Pzc_EOFIgQ",
            "CAACAgUAAxkBAAEEl-ZhphuQxfziE6Ihh67EiSxBYbLNXgACUQADywzcOs2n2Pzc_EOFIgQ", )
            
-
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
@@ -194,7 +188,6 @@ def test(update: Update, context: CallbackContext):
     print(update.effective_message)
 
 
-
 def start(update: Update, context: CallbackContext):
     args = context.args
     uptime = get_readable_time((time.time() - StartTime))
@@ -210,7 +203,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="⬅Back", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
                     ),
                 )
 
@@ -227,15 +220,17 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            update.effective_message.reply_sticker(
-                random.choice(STICKERS),
-                timeout=60,
-            )
+            first_name = update.effective_user.first_name
             update.effective_message.reply_text(
-               PM_START_TEXT,
+                PM_START_TEXT.format(
+                    escape_markdown(first_name),
+                    escape_markdown(uptime),
+                    sql.num_users(),
+                    sql.num_chats()),                        
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
+                disable_web_page_preview=False,
             )
     else:
         first_name = update.effective_user.first_name
@@ -313,7 +308,6 @@ def error_callback(update: Update, context: CallbackContext):
         # handle all other telegram related errors
 
 
-
 def help_button(update, context):
     query = update.callback_query
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
@@ -327,7 +321,7 @@ def help_button(update, context):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "Powered by @IpintpiRobot\nHere is the help for the *{}* module:\n".format(
+                "Here is the help for the *{}* module:\n".format(
                     HELPABLE[module].__mod_name__
                 )
                 + HELPABLE[module].__help__
@@ -337,8 +331,7 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="Go Back", callback_data="help_back"),
-                      InlineKeyboardButton(text="Go Home", callback_data="upin_back")]]
+                    [[InlineKeyboardButton(text="Go Back", callback_data="help_back")]]
                 ),
             )
 
@@ -379,33 +372,163 @@ def help_button(update, context):
         pass
 
 
-
-def upin_data_callback(update, context):
+def upin_about_callback(update, context):
     query = update.callback_query
     if query.data == "upin_":
         query.message.edit_text(
-            text="""CallBackQueriesData Here""",
+            text="๏ I'm *Upin*, a powerful group management bot built to help you manage your group easily."
+            "\n• I can restrict users."
+            "\n• I can greet users with customizable welcome messages and even set a group's rules."
+            "\n• I have an advanced anti-flood system."
+            "\n• I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc."
+            "\n• I have a note keeping system, blacklists, and even predetermined replies on certain keywords."
+            "\n• I check for admins' permissions before executing any command and more stuffs"
+            "\n\n_Upin's licensed under the GNU General Public License v3.0_"
+            "\n\n Click on button bellow to get basic help for EmikoRobot.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Back", callback_data="upin_back")
+                    InlineKeyboardButton(text="Admins", callback_data="upin_admin"),
+                    InlineKeyboardButton(text="Notes", callback_data="upin_notes"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Support", callback_data="upin_support"),
+                    InlineKeyboardButton(text="Credits", callback_data="upin_credit"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Code", url="https://github.com/Soedirmand/UpinRobot"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Back", callback_data="upin_back"),
                  ]
                 ]
             ),
         )
     elif query.data == "upin_back":
+        first_name = update.effective_user.first_name
+        uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
-                PM_START_TEXT,
+                PM_START_TEXT.format(
+                    escape_markdown(first_name),
+                    escape_markdown(uptime),
+                    sql.num_users(),
+                    sql.num_chats()),
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
                 disable_web_page_preview=False,
         )
 
+    elif query.data == "upin_admin":
+        query.message.edit_text(
+            text=f"*๏ Let's make your group bit effective now*"
+            "\nCongragulations, UpinRobot now ready to manage your group."
+            "\n\n*Admin Tools*"
+            "\nBasic Admin tools help you to protect and powerup your group."
+            "\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
+            "\n\n*Greetings*"
+            "\nLets set a welcome message to welcome new users coming to your group."
+            "\nsend `/setwelcome [message]` to set a welcome message!",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Go Back", callback_data="upin_")]]
+            ),
+        )
+
+    elif query.data == "upin_notes":
+        query.message.edit_text(
+            text=f"<b>๏ Setting up notes</b>"
+            f"\nYou can save message/media/audio or anything as notes"
+            f"\nto get a note simply use # at the beginning of a word"
+            f"\n\nYou can also set buttons for notes and filters (refer help menu)",
+            parse_mode=ParseMode.HTML,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="upin_")]]
+            ),
+        )
+    elif query.data == "upin_support":
+        query.message.edit_text(
+            text="*๏ Upin support chats*"
+            "\nJoin My Support Group/Channel for see or report a problem on Upin.",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="Support", url="t.me/allbefin"),
+                    InlineKeyboardButton(text="Updates", url="https://t.me/UpinIpinUpdates"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Go Back", callback_data="upin_"),
+                 
+                 ]
+                ]
+            ),
+        )
 
 
+    elif query.data == "upin_credit":
+        query.message.edit_text(
+            text=f"๏ Credis for Upin\n"
+            "\nHere Developers Making And Give Inspiration For Made The EmikoRobot",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="soedirmand", url="https://github.com/Soedrimand"),
+                    InlineKeyboardButton(text="sena-ex", url="https://github.com/Kennedy-ex"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="ctzfmily", url="https://github.com/Ctzfamily"),
+                    InlineKeyboardButton(text="Valtaoi", url="https://github.com/ValtAoiTheBot"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Go Back", callback_data="upin_"),
+                 ]
+                ]
+            ),
+        )
+
+def Source_about_callback(update, context):
+    query = update.callback_query
+    if query.data == "source_":
+        query.message.edit_text(
+            text="๏›› This advance command for Musicplayer."
+            "\n\n๏ Command for admins only."
+            "\n • `!reload` - For refreshing the adminlist."
+            "\n • `!pause` - To pause the playback."
+            "\n • `!resume` - To resuming the playback You've paused."
+            "\n • `!skip` - To skipping the player."
+            "\n • `!end` - For end the playback."
+            "\n • `!musicplayer <on/off>` - Toggle for turn ON or turn OFF the musicplayer."
+            "\n\n๏ Command for all members."
+            "\n • `!play` <query /reply audio> - Playing music via YouTube."
+            "\n • `!playlist` - To playing a playlist of groups or your personal playlist",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="Back", callback_data="upin_")
+                 ]
+                ]
+            ),
+        )
+    elif query.data == "source_back":
+        first_name = update.effective_user.first_name
+        query.message.edit_text(
+                PM_START_TEXT.format(
+                    escape_markdown(first_name),
+                    escape_markdown(uptime),
+                    sql.num_users(),
+                    sql.num_chats()),
+                reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode=ParseMode.MARKDOWN,
+                timeout=60,
+                disable_web_page_preview=False,
+        )
 
 def get_help(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
@@ -431,8 +554,8 @@ def get_help(update: Update, context: CallbackContext):
                 ),
             )
             return
-        update.effective_message.reply_photo(
-            HELP_IMG, HELP_MSG,
+        update.effective_message.reply_text(
+            "Contact me in PM to get the list of possible commands.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -458,7 +581,7 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
+                [[InlineKeyboardButton(text="Go Back", callback_data="help_back")]]
             ),
         )
 
@@ -507,7 +630,6 @@ def send_settings(chat_id, user_id, user=False):
             )
 
 
-
 def settings_button(update: Update, context: CallbackContext):
     query = update.callback_query
     user = update.effective_user
@@ -531,7 +653,7 @@ def settings_button(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Back",
+                                text="Go Back",
                                 callback_data="stngs_back({})".format(chat_id),
                             )
                         ]
@@ -591,7 +713,6 @@ def settings_button(update: Update, context: CallbackContext):
             LOGGER.exception("Exception in settings buttons. %s", str(query.data))
 
 
-
 def get_settings(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
@@ -623,7 +744,6 @@ def get_settings(update: Update, context: CallbackContext):
         send_settings(chat.id, user.id, True)
 
 
-
 def donate(update: Update, context: CallbackContext):
     user = update.effective_message.from_user
     chat = update.effective_chat  # type: Optional[Chat]
@@ -639,7 +759,6 @@ def donate(update: Update, context: CallbackContext):
                 "[here]({})".format(DONATION_LINK),
                 parse_mode=ParseMode.MARKDOWN,
             )
-
     else:
         try:
             bot.send_message(
@@ -677,8 +796,6 @@ def migrate_chats(update: Update, context: CallbackContext):
     raise DispatcherHandlerStop
 
 
-
-
 def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
@@ -688,26 +805,37 @@ def main():
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!",
             )
-        except BadRequest as e:
-            LOGGER.warning(e.message)
+    test_handler = CommandHandler("test", test, run_async=True)
+    start_handler = CommandHandler("start", start, run_async=True)
 
+    help_handler = CommandHandler("help", get_help, run_async=True)
+    help_callback_handler = CallbackQueryHandler(
+        help_button, pattern=r"help_.*", run_async=True
+    )
 
-    start_handler = DisableAbleCommandHandler("start", start)
+    settings_handler = CommandHandler("settings", get_settings, run_async=True)
+    settings_callback_handler = CallbackQueryHandler(
+        settings_button, pattern=r"stngs_", run_async=True
+    )
 
-    help_handler = DisableAbleCommandHandler("help", get_help)
-    help_callback_handler = CallbackQueryHandler(help_button, pattern=r"help_.*")
+    about_callback_handler = CallbackQueryHandler(
+        upin_about_callback, pattern=r"upin_", run_async=True
+    )
 
-    settings_handler = CommandHandler("settings", get_settings)
-    settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
+    source_callback_handler = CallbackQueryHandler(
+        Source_about_callback, pattern=r"source_", run_async=True
+    )
 
-    data_callback_handler = CallbackQueryHandler(upin_data_callback, pattern=r"upin_")
-    donate_handler = CommandHandler("donate", donate)
-    migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
+    donate_handler = CommandHandler("donate", donate, run_async=True)
+    migrate_handler = MessageHandler(
+        Filters.status_update.migrate, migrate_chats, run_async=True
+    )
 
-    # dispatcher.add_handler(test_handler)
+    dispatcher.add_handler(test_handler)
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
-    dispatcher.add_handler(data_callback_handler)
+    dispatcher.add_handler(about_callback_handler)
+    dispatcher.add_handler(source_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
@@ -726,8 +854,8 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Upin is now alive and functioning")
-        updater.start_polling(timeout=15, read_latency=4, clean=True)
+        LOGGER.info("Using long polling.")
+        updater.start_polling(timeout=15, read_latency=4, drop_pending_updates=True)
 
     if len(argv) not in (1, 3, 4):
         telethn.disconnect()
@@ -737,7 +865,7 @@ def main():
     updater.idle()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
-    telethn.start(bot_token=TOKEN)
+    telethn.start(bot_token=TOKEN)    
     main()
