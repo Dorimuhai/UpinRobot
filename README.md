@@ -35,7 +35,7 @@ The easiest way to deploy this Bot
 
 ## Special Credits
 
-** - VegetaRobot
+*** - VegetaRobot
 ## - zeusRobot
 ## - emikoRobot  -> thanks for giving me permission to fetch the button in your main.py
 ## - Image-Editorbot
