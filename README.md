@@ -37,12 +37,8 @@ The easiest way to deploy this Bot
 
 ## - VegetaRobot
 ## - zeusRobot
-## - ValtAoiRobot
-## - emikoRobot
--> thanks for giving me permission to fetch the button in your main.py
-
+## - emikoRobot  -> thanks for giving me permission to fetch the button in your main.py
 ## - Image-Editorbot
-
 ## and thanks for the others 😊
 
 # ✨ Support
