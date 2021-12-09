@@ -35,9 +35,9 @@ The easiest way to deploy this Bot
 
 ## Special Credits
 
-- Vegetarobot
-- Yone Robot
-- Saitama
+- VegetaRobot
+- zeusRobot
+- ValtAoiRobot
 - Image-Editorbot
 
 
