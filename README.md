@@ -36,10 +36,10 @@ The easiest way to deploy this Bot
 ## Special Credits
 
 > - VegetaRobot
-## - zeusRobot
-## - emikoRobot  -> thanks for giving me permission to fetch the button in your main.py
-## - Image-Editorbot
-## and thanks for the others 😊
+> - zeusRobot
+> - emikoRobot  -> thanks for giving me permission to fetch the button in your main.py
+> - Image-Editorbot
+> and thanks for the others 😊
 
 # ✨ Support
 <a href="https://t.me/allbefin"><img src="https://img.shields.io/badge/Support -Telegram%20Group-blue.svg?logo=telegram"></a>
