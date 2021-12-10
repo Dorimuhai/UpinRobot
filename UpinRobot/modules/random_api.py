@@ -3,7 +3,7 @@ from UpinRobot.events import register
 from UpinRobot import telethn as tbot
 
 
-@register(pattern="^/asp ?(.*)")
+@register(pattern="^/jamet ?(.*)")
 async def asupan(event):
     try:
         resp = requests.get("https://api-tede.herokuapp.com/api/asupan/ptl").json()
@@ -13,7 +13,7 @@ async def asupan(event):
         await event.reply("`404 not found...`")
 
 
-@register(pattern="^/chika ?(.*)")
+@register(pattern="^/cicak ?(.*)")
 async def chika(event):
     try:
         resp = requests.get("https://api-tede.herokuapp.com/api/chika").json()
@@ -23,7 +23,7 @@ async def chika(event):
         await event.reply("`404 not found...`")
 
 
-@register(pattern="^/hilih ?(.*)")
+@register(pattern="^/hl ?(.*)")
 async def _(hilih):
     kuntul = hilih.pattern_match.group(1)
     if not kuntul:
